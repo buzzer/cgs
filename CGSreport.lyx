@@ -1,0 +1,165 @@
+#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass llncs
+\begin_preamble
+\usepackage{color}
+\usepackage{listings}
+\end_preamble
+\use_default_options true
+\language ngerman
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing onehalf
+\use_hyperref true
+\pdf_title "Partikel-Systeme"
+\pdf_author "Sebastian Rockel"
+\pdf_subject "Computer Grafik Seminar 2010: Prozeduraler Content"
+\pdf_keywords "computer graphic,particle engine, system, GPU, UberFlow"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language german
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Partikel Systeme
+\end_layout
+
+\begin_layout Subtitle
+
+\size small
+Seminar Computer Grafik: Prozeduraler Content
+\begin_inset Newline newline
+\end_inset
+
+Sommersemester 2010
+\end_layout
+
+\begin_layout Author
+Sebastian Rockel
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+email{
+\end_layout
+
+\end_inset
+
+8rockel@informatik.uni-hamburg.de
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Institute
+Universität Hamburg 
+\end_layout
+
+\begin_layout Abstract
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Dieser Bericht gibt eine Einführung in das Thema Model-Checking und führt
+ anhand praktischer Beispiele mit dem Werkzeug SPIN durch den Verifikationsproze
+ss.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Einführung
+\end_layout
+
+\begin_layout Subsection
+Partikelsystem
+\end_layout
+
+\begin_layout Subsection
+GPU-Programmierung
+\end_layout
+
+\begin_layout Section
+UberFlow-Engine
+\end_layout
+
+\begin_layout Subsection
+Optimierung
+\end_layout
+
+\begin_layout Section
+Zusammenfassung
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintAll"
+bibfiles "particlesystem"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
