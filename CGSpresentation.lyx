@@ -1,4 +1,4 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.6.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -14,6 +14,7 @@
 \setbeamertemplate{footline}[infolines theme]{}
 %\setbeamertemplate{footline}[page number]
 \usepackage{color}
+\usepackage{pdfsync}
 %\usepackage{fancyvrb} 		% More advanced code listing styles
 % Navigation bar
 \setbeamertemplate{navigation symbols}{
@@ -49,8 +50,8 @@
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder false
+\pdf_breaklinks true
+\pdf_pdfborder true
 \pdf_colorlinks false
 \pdf_backref false
 \pdf_pdfusetitle true
@@ -88,7 +89,7 @@ Sebastian
 
 Rockel 
 \begin_inset OptArg
-status collapsed
+status open
 
 \begin_layout Plain Layout
 S.Rockel
@@ -106,10 +107,10 @@ Department für Informatik
 
 Universität Hamburg
 \begin_inset OptArg
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Informatik, UHH
+Uni Hamburg
 \end_layout
 
 \end_inset
@@ -359,11 +360,355 @@ Einführung
 \end_layout
 
 \begin_layout Subsection
+Ein Beispiel-Partikel-System
+\end_layout
+
+\begin_layout BeginFrame
+Beispiel
+\end_layout
+
+\begin_layout Itemize
+'User-friendly' approach
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Partikel können 
+\begin_inset Quotes ald
+\end_inset
+
+frei
+\begin_inset Quotes ard
+\end_inset
+
+ gestaltet werden
+\end_layout
+
+\begin_layout Itemize
+Vordefinierte Typen
+\end_layout
+
+\begin_layout Itemize
+Kollisionserkennung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+hüpfend oder fließende Interaktion
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gravitation und Wind können definiert werden
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+auch zeitlich variierend
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Partikel-System-Elemente
+\end_layout
+
+\begin_layout BeginFrame
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+[allowframebreaks]
+\end_layout
+
+\end_inset
+
+Rune's Partikelsystem
+\end_layout
+
+\begin_layout Itemize
+Frequency
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Emission (Anzahl) pro Zeit
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Life
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lebensdauer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Life turbulence
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Zufälligkeit der Lebensdauer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Seed
+\end_layout
+
+\begin_layout Itemize
+Max number
+\end_layout
+
+\begin_layout Itemize
+Luftwiderstand
+\end_layout
+
+\begin_layout Itemize
+Kinetische Energy
+\end_layout
+
+\begin_layout Itemize
+Gravitation
+\end_layout
+
+\begin_layout Itemize
+Wind
+\end_layout
+
+\begin_layout Itemize
+Rückprall
+\end_layout
+
+\begin_layout Itemize
+Reibung
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Demos
+\end_layout
+
+\begin_layout BeginFrame
+Demos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/flow/flow-poster.jpg
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/campfire/campfire-poster.jpg
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/hose/hose-poster.jpg
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/smoketrail/smoketrail-poster.jpg
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Abfluss"
+target "/Users/sebastian/cgs/media/flow/flow.mov"
+type "file:"
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Lagerfeuer"
+target "/Users/sebastian/cgs/media/campfire/campfire.mov"
+type "file:"
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Fontäne"
+target "/Users/sebastian/cgs/media/hose/hose.mov"
+type "file:"
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Rakete"
+target "/Users/sebastian/cgs/media/smoketrail/smoketrail.mov"
+type "file:"
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Nachteil
+\end_layout
+
+\begin_layout Itemize
+keine Partikel-zu-Partikel - Interaktion
+\end_layout
+
+\begin_layout Itemize
+Fluid-Dynamik
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wasser, Rauch
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nicht in Echtzeit
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
 GPU-Programmierung
 \end_layout
 
 \begin_layout BeginFrame
 GPU-Programmierung
+\end_layout
+
+\begin_layout Itemize
+Emission
+\end_layout
+
+\begin_layout Itemize
+Collisionless motion of particles
+\end_layout
+
+\begin_layout Itemize
+Sorting of particles 
+\end_layout
+
+\begin_layout Itemize
+Pairing of collision partners
+\end_layout
+
+\begin_layout Itemize
+Collision response
+\end_layout
+
+\begin_layout Itemize
+Enforcement of boundary conditions
+\end_layout
+
+\begin_layout Itemize
+Particle rendering
 \end_layout
 
 \begin_layout EndFrame
@@ -382,8 +727,84 @@ UberFlow
 UberFlow
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/schnee.jpg
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout EndFrame
 
+\end_layout
+
+\begin_layout Subsection
+Emission
+\end_layout
+
+\begin_layout BeginFrame
+Emission
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/vulkan.jpg
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Collisionless Particle Motion
+\end_layout
+
+\begin_layout Subsection
+Collision Detection
+\end_layout
+
+\begin_layout Subsection
+Sorting
 \end_layout
 
 \begin_layout Subsection
@@ -392,6 +813,128 @@ Optimierung
 
 \begin_layout BeginFrame
 Optimierung
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Anwendung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Examp_cluster.jpg
+	lyxscale 15
+	width 49text%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/WindtunnelRibbons.jpg
+	lyxscale 20
+	width 49text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Windtunnel1.jpg
+	lyxscale 25
+	height 25theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Demo
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/wasserfall.jpg
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset href
+LatexCommand href
+name "Uberflow Demo"
+target "/Users/sebastian/cgs/media/uberflow.avi"
+type "file:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout EndFrame
@@ -454,7 +997,7 @@ beamertemplatebookbibitems
 LatexCommand bibtex
 btprint "btPrintAll"
 bibfiles "particlesystem"
-options "plain"
+options "plainurl"
 
 \end_inset
 
