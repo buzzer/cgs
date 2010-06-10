@@ -820,6 +820,37 @@ Optimierung
 \end_layout
 
 \begin_layout BeginFrame
+CUDA
+\end_layout
+
+\begin_layout Itemize
+fluidsGL
+\end_layout
+
+\begin_layout Itemize
+nbody
+\end_layout
+
+\begin_layout Itemize
+particles
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset citation
+LatexCommand citet
+key "CUDA"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
 Anwendung
 \end_layout
 
@@ -827,7 +858,7 @@ Anwendung
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -866,7 +897,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -906,7 +937,7 @@ Demo
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
