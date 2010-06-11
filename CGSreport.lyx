@@ -1,4 +1,4 @@
-#LyX 1.6.5 created this file. For more info see http://www.lyx.org/
+#LyX 1.6.6.1 created this file. For more info see http://www.lyx.org/
 \lyxformat 345
 \begin_document
 \begin_header
@@ -40,7 +40,7 @@
 \use_geometry false
 \use_amsmath 1
 \use_esint 1
-\cite_engine basic
+\cite_engine natbib_numerical
 \use_bibtopic false
 \paperorientation portrait
 \secnumdepth 3
@@ -140,6 +140,30 @@ GPU-Programmierung
 UberFlow-Engine
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CUDA"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RuneParticleSys"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Optimierung
 \end_layout
@@ -154,7 +178,7 @@ Zusammenfassung
 LatexCommand bibtex
 btprint "btPrintAll"
 bibfiles "particlesystem"
-options "plain"
+options "bibtotoc,alphadin"
 
 \end_inset
 

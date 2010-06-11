@@ -645,6 +645,17 @@ type "file:"
 
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RuneParticleSys"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout EndFrame
 
 \end_layout
@@ -755,6 +766,13 @@ status collapsed
 \end_inset
 
 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kipfer:2004fk"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout EndFrame
@@ -838,7 +856,7 @@ particles
 \begin_layout Standard
 \align center
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand cite
 key "CUDA"
 
 \end_inset
@@ -1028,7 +1046,7 @@ beamertemplatebookbibitems
 LatexCommand bibtex
 btprint "btPrintAll"
 bibfiles "particlesystem"
-options "plainurl"
+options "alphaurl"
 
 \end_inset
 
