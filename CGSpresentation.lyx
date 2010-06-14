@@ -5,7 +5,7 @@
 \textclass beamer
 \begin_preamble
 %\mode<presentation>
-%\usetheme{Warsaw}
+\usetheme{Warsaw}
 %\usetheme{Marburg}
 %\setbeamercovered{transparent}
 \usecolortheme{seahorse}
@@ -93,7 +93,8 @@ Rockel
 status collapsed
 
 \begin_layout Plain Layout
-S.Rockel
+S.
+ Rockel
 \end_layout
 
 \end_inset
@@ -361,7 +362,155 @@ Kurze Einführung Partikelsystem
 \end_layout
 
 \begin_layout BeginFrame
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+[allowframebreaks]
+\end_layout
+
+\end_inset
+
 Einführung
+\end_layout
+
+\begin_layout FrameSubtitle
+Partikel-System
+\end_layout
+
+\begin_layout Itemize
+Wofür?
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Volumetrische Effekte
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Feuer, Explosionen, Rauch, Flüssigkeiten
+\end_layout
+
+\begin_layout Itemize
+basierend auf einfachen physikalischen Modellen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Dynamik-Simulationen
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Partikel-Partikel-Interaktion
+\end_layout
+
+\begin_layout Itemize
+komplexere physikalische Modelle
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Bisher:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Dynamik-Modul auf CPU
+\end_layout
+
+\begin_layout Itemize
+Rendering Module auf CPU
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Partikel-Position (u.a.) -> GPU (Darstellung)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Heute:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+programmierbare Funktions-Pipelines
+\end_layout
+
+\begin_layout Itemize
+High-Level Shading-Sprachen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Trotzdem:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Transfer neuer Partikel-Positionen zur Geometrie-Engine
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+=> Muss vermieden werden
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+OpenGL Speicher-Objekte
+\end_layout
+
+\begin_layout Itemize
+PixelShader 3.0 Speicher für:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vertex Buffer + Render Target
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Vorteile:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Random Access to textures
+\end_layout
+
+\begin_layout Itemize
+Parallelism und Speicher-Bandbreite
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ATI Radeon 9800
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout EndFrame
@@ -518,7 +667,7 @@ Demos
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -557,7 +706,7 @@ status open
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset space \hfill{}
@@ -683,7 +832,7 @@ Fluid-Dynamik
 
 \begin_deeper
 \begin_layout Itemize
-Wasser, Rauch
+Wasser, RauchfluidsGL
 \end_layout
 
 \end_deeper
@@ -755,10 +904,6 @@ sideways false
 status collapsed
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/schnee.jpg
 	lyxscale 10
@@ -783,6 +928,62 @@ key "Kipfer:2004fk"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+real-time
+\end_layout
+
+\begin_layout Itemize
+large particle sets (> 100000)
+\end_layout
+
+\begin_layout Itemize
+GPU-Berechnung (OpenGL)
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Details
+\end_layout
+
+\begin_layout Itemize
+Memory-Objekte, als
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Container: Geomtrische Daten
+\end_layout
+
+\begin_layout Itemize
+Render-Targets
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ermöglicht Manipulation+Rendern von Partikeln auf GPU
+\end_layout
+
+\begin_layout Itemize
+Partikel-System:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Inter-Partikel-Kollisionen
+\end_layout
+
+\begin_layout Itemize
+Sichtbarkeits-Sortierung
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kein Datentransfer (GPU-CPU) zur Laufzeit
 \end_layout
 
 \begin_layout EndFrame
@@ -852,15 +1053,39 @@ CUDA
 \end_layout
 
 \begin_layout Itemize
-fluidsGL
+\begin_inset CommandInset href
+LatexCommand href
+name "fluidsGL"
+target "/Users/sebastian/cgs/media/cuda_fluidsGL.app"
+type "file:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-nbody
+\begin_inset CommandInset href
+LatexCommand href
+name "nbody"
+target "/Users/sebastian/cgs/media/cuda_nbody.app"
+type "file:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-particles
+\begin_inset CommandInset href
+LatexCommand href
+name "particles"
+target "/Users/sebastian/cgs/media/cuda_particles.app"
+type "file:"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1036,6 +1261,16 @@ Zusammenfassung
 Zusammenfassung
 \end_layout
 
+\begin_layout Itemize
+Neue Klasse von Graphik-Algorithmen (Performance)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vermeidung des Bus-Flaschenhalses
+\end_layout
+
+\end_deeper
 \begin_layout EndFrame
 
 \end_layout
