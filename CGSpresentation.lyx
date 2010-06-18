@@ -362,6 +362,60 @@ Kurze Einführung Partikelsystem
 \end_layout
 
 \begin_layout BeginFrame
+Ziele
+\end_layout
+
+\begin_layout Itemize
+Partikesystem
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Sorting
+\end_layout
+
+\begin_layout Itemize
+(Interpartikel-) Kollisionenerkennung
+\end_layout
+
+\begin_layout Itemize
+alles auf GPU (Applikation + Rendern)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Probleme (bisher)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Parallelism
+\end_layout
+
+\begin_layout Itemize
+Vermeidung Datentransfer (GPU-CPU)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ansatz
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+OpenGL SuperBuffers (TODO)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nicht so detailiert in Vortrag: Sortierung
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
 \begin_inset ERT
 status collapsed
 
@@ -595,7 +649,11 @@ Frequency
 
 \begin_deeper
 \begin_layout Itemize
-Emission (Anzahl) pro Zeit
+
+\series bold
+Emission
+\series default
+ (Anzahl) pro Zeit
 \end_layout
 
 \end_deeper
@@ -649,6 +707,142 @@ Rückprall
 
 \begin_layout Itemize
 Reibung
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Uberflow:
+\end_layout
+
+\begin_layout Itemize
+Emission
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3D Position: RGBA Texture, r(t)
+\end_layout
+
+\begin_layout Itemize
+Velocity: Texture, v(r,t)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Partikelbewegung (ohne Kollision)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Euler + Newton
+\end_layout
+
+\begin_layout Itemize
+Windfield: 3D texture
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Partikelsortierung (für Optik)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Partikelsortierung
+\end_layout
+
+\begin_layout Itemize
+Erscheinung zum Zuschauer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Partikel-Kollisionserkennung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Set of Koll.partner (nur einer 
+\begin_inset Quotes ald
+\end_inset
+
+gewinnt
+\begin_inset Quotes ard
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Problem: Multiple Kollisionen (Falsche Ergebnisse)
+\end_layout
+
+\begin_layout Itemize
+TODO: 2D oder 3D Texturen (oder VOXEL??)
+\end_layout
+
+\begin_layout Itemize
+Nachteil: Zellraster-> spez.
+ Konstellationen werden nicht erkannt.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kollisionsreaktion
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+velocity, angle, impulse
+\end_layout
+
+\begin_layout Itemize
+Nah genug: Back tracking in time (Erklären!)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kollisionen mit Umgebung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+3D texture map
+\end_layout
+
+\begin_layout Itemize
+-> particle flow over height fields 2D RGBA textupre: (normale + height)
+\end_layout
+
+\begin_layout Itemize
+-> formel?
+\end_layout
+
+\begin_layout Itemize
+-> Kollisionsreaktion
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Partikel-Rendering
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+frame buffer
+\end_layout
+
+\begin_layout Itemize
+time stamp (life cycle)
+\end_layout
+
+\end_deeper
+\end_inset
+
+
 \end_layout
 
 \begin_layout EndFrame
@@ -1041,7 +1235,31 @@ Optimierung
 \end_layout
 
 \begin_layout BeginFrame
+Performance
+\end_layout
+
+\begin_layout Standard
+Table 1
+\end_layout
+
+\begin_layout Standard
+600MPixels?
+\end_layout
+
+\begin_layout Standard
 Optimierung
+\end_layout
+
+\begin_layout Itemize
+only collisions in same row
+\end_layout
+
+\begin_layout Itemize
+collision with different time stamps
+\end_layout
+
+\begin_layout Itemize
+1Mio Partikel:some frames per second
 \end_layout
 
 \begin_layout EndFrame
@@ -1271,6 +1489,38 @@ Vermeidung des Bus-Flaschenhalses
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+First (!) Partikelsystem komplett auf GPU
+\end_layout
+
+\begin_layout Itemize
+Inter-Partikel Kollisionenerkennung
+\end_layout
+
+\begin_layout Itemize
+Sichtbarkeitssortierung
+\end_layout
+
+\begin_layout Itemize
+Parallele Partikle manipulations algorithmen (for SIMD, OpenGL memory objects)
+\end_layout
+
+\begin_layout Itemize
+Real-Time
+\end_layout
+
+\begin_layout Itemize
+Vermeidung CPU-GPU Transfer
+\end_layout
+
+\begin_layout Itemize
+Partikel-Dynamik
+\end_layout
+
+\begin_layout Itemize
+GPU Sorting-Algorithmus
+\end_layout
+
 \begin_layout EndFrame
 
 \end_layout
