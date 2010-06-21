@@ -369,12 +369,12 @@ Ziele
 \end_layout
 
 \begin_layout Itemize
-Partikesystem
+Partikelsystem
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Sorting
+Sortierung
 \end_layout
 
 \begin_layout Itemize
@@ -392,7 +392,7 @@ Probleme (bisher)
 
 \begin_deeper
 \begin_layout Itemize
-Parallelism
+Parallelität
 \end_layout
 
 \begin_layout Itemize
@@ -620,8 +620,160 @@ status collapsed
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+[allowframebreaks]
+\end_layout
+
+\end_inset
+
+Rune's Partikelsystem
+\end_layout
+
+\begin_layout Itemize
+Frequency
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+Emission
+\series default
+ (Anzahl) pro Zeit
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Life
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Lebensdauer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Life turbulence
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Zufälligkeit der Lebensdauer
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Seed
+\end_layout
+
+\begin_layout Itemize
+Max number
+\end_layout
+
+\begin_layout Itemize
+Luftwiderstand
+\end_layout
+
+\begin_layout Itemize
+Kinetische Energy
+\end_layout
+
+\begin_layout Itemize
+Gravitation
+\end_layout
+
+\begin_layout Itemize
+Wind
+\end_layout
+
+\begin_layout Itemize
+Rückprall
+\end_layout
+
+\begin_layout Itemize
+Reibung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ein Beispiel-Partikel-System
+\end_layout
+
 \begin_layout BeginFrame
-Demos
+Beispiel
+\end_layout
+
+\begin_layout Itemize
+'User-friendly' approach
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Partikel können 
+\begin_inset Quotes ald
+\end_inset
+
+frei
+\begin_inset Quotes ard
+\end_inset
+
+ gestaltet werden
+\end_layout
+
+\begin_layout Itemize
+Vordefinierte Typen
+\end_layout
+
+\begin_layout Itemize
+Kollisionserkennung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+hüpfend oder fließende Interaktion
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gravitation und Wind können definiert werden
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+auch zeitlich variierend
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+Demo
 \end_layout
 
 \begin_layout FrameSubtitle
@@ -783,6 +935,41 @@ type "file:"
 \begin_inset Note Note
 status collapsed
 
+\begin_layout BeginFrame
+Nachteil POV-Ray
+\end_layout
+
+\begin_layout Itemize
+keine Partikel-zu-Partikel - Interaktion
+\end_layout
+
+\begin_layout Itemize
+Nicht in Echtzeit
+\end_layout
+
+\begin_layout Itemize
+Fluid-Dynamik
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wasser, RauchfluidsGL
+\end_layout
+
+\end_deeper
+\begin_layout EndFrame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Itemize
 Bisher:
 \end_layout
@@ -836,125 +1023,8 @@ Transfer neuer Partikel-Positionen zur Geometrie-Engine
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout BeginFrame
-OpenGL Speicher-Objekte
-\end_layout
-
-\begin_layout Itemize
-PixelShader 3.0 Speicher für:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Vertex Buffer + Render Target
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Vorteile:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Random Access to textures
-\end_layout
-
-\begin_layout Itemize
-Parallelism und Speicher-Bandbreite
-\end_layout
-
-\end_deeper
-\begin_layout Plain Layout
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ATI Radeon 9800
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout EndFrame
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Ein Beispiel-Partikel-System
-\end_layout
-
-\begin_layout BeginFrame
-Beispiel
-\end_layout
-
-\begin_layout Itemize
-'User-friendly' approach
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Partikel können 
-\begin_inset Quotes ald
-\end_inset
-
-frei
-\begin_inset Quotes ard
-\end_inset
-
- gestaltet werden
-\end_layout
-
-\begin_layout Itemize
-Vordefinierte Typen
-\end_layout
-
-\begin_layout Itemize
-Kollisionserkennung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-hüpfend oder fließende Interaktion
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Gravitation und Wind können definiert werden
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-auch zeitlich variierend
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout EndFrame
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
-Partikelsystem im Detail
+Details
 \end_layout
 
 \begin_layout BeginFrame
@@ -1046,42 +1116,6 @@ Wind
 
 \end_deeper
 \begin_layout EndFrame
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Note Note
-status open
-
-\begin_layout BeginFrame
-Nachteil POV-Ray
-\end_layout
-
-\begin_layout Itemize
-keine Partikel-zu-Partikel - Interaktion
-\end_layout
-
-\begin_layout Itemize
-Nicht in Echtzeit
-\end_layout
-
-\begin_layout Itemize
-Fluid-Dynamik
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Wasser, RauchfluidsGL
-\end_layout
-
-\end_deeper
-\begin_layout EndFrame
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
@@ -1215,7 +1249,7 @@ DirectX (Microsoft)
 \end_layout
 
 \begin_layout Subsection
-Ein GPU-Partikelsystem
+GPU-Partikelsysteme
 \end_layout
 
 \begin_layout BeginFrame
@@ -1417,11 +1451,15 @@ Berechnung und Redering auf GPU
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
+\begin_layout Section
+UberFlow-Partikelsystem
+\end_layout
 
-\begin_layout Plain Layout
+\begin_layout Subsection
+Überblick
+\end_layout
+
+\begin_layout BeginFrame
 \begin_inset ERT
 status collapsed
 
@@ -1432,78 +1470,218 @@ status collapsed
 
 \end_inset
 
-Rune's Partikelsystem
+UberFlow
+\end_layout
+
+\begin_layout FrameSubtitle
+Partikelsystem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kipfer:2004fk"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+width "50text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+Echtzeit-Darstellung
 \end_layout
 
 \begin_layout Itemize
-Frequency
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\series bold
-Emission
-\series default
- (Anzahl) pro Zeit
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Life
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lebensdauer
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Life turbulence
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Zufälligkeit der Lebensdauer
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seed
+> 100.000 Partikel
 \end_layout
 
 \begin_layout Itemize
-Max number
-\end_layout
-
-\begin_layout Itemize
-Luftwiderstand
-\end_layout
-
-\begin_layout Itemize
-Kinetische Energy
-\end_layout
-
-\begin_layout Itemize
-Gravitation
-\end_layout
-
-\begin_layout Itemize
-Wind
-\end_layout
-
-\begin_layout Itemize
-Rückprall
-\end_layout
-
-\begin_layout Itemize
-Reibung
+GPU-Berechnung
 \end_layout
 
 \end_inset
 
 
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+width "50text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/schnee.jpg
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+OpenGL
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Pixelshader 3.0
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Positions- und Rendering-Berechnung auf GPU
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vermeidung CPU-GPU Flaschenhals
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+3D Position als RGBA-Texture
+\end_layout
+
+\begin_layout Itemize
+Geschwindigkeit als Texture
+\end_layout
+
+\begin_layout Itemize
+Kollisionserkennung
+\end_layout
+
+\begin_layout Itemize
+Heightmaps
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Anwendungen
+\end_layout
+
+\begin_layout BeginFrame
+Anwendung
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Examp_cluster.jpg
+	lyxscale 15
+	height 45theight%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/WindtunnelRibbons.jpg
+	lyxscale 20
+	height 45theight%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Windtunnel1.jpg
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\size tiny
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kipfer:2004fk"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Subsection
+Alles mit Texturen
 \end_layout
 
 \begin_layout Standard
@@ -1646,195 +1824,6 @@ time stamp (life cycle)
 \begin_inset Note Note
 status collapsed
 
-\begin_layout Plain Layout
-GPU-Programmierung
-\end_layout
-
-\begin_layout BeginFrame
-GPU-Programmierung
-\end_layout
-
-\begin_layout Itemize
-Emission
-\end_layout
-
-\begin_layout Itemize
-Collisionless motion of particles
-\end_layout
-
-\begin_layout Itemize
-Sorting of particles 
-\end_layout
-
-\begin_layout Itemize
-Pairing of collision partners
-\end_layout
-
-\begin_layout Itemize
-Collision response
-\end_layout
-
-\begin_layout Itemize
-Enforcement of boundary conditions
-\end_layout
-
-\begin_layout Itemize
-Particle rendering
-\end_layout
-
-\begin_layout EndFrame
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-UberFlow-Partikelsystem
-\end_layout
-
-\begin_layout Subsection
-Überblick
-\end_layout
-
-\begin_layout BeginFrame
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-[allowframebreaks]
-\end_layout
-
-\end_inset
-
-UberFlow
-\end_layout
-
-\begin_layout FrameSubtitle
-Partikelsystem 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kipfer:2004fk"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-width "60text%"
-special "none"
-height "1in"
-height_special "totalheight"
-status open
-
-\begin_layout Itemize
-Echtzeit-Darstellung
-\end_layout
-
-\begin_layout Itemize
-> 100.000 Partikel
-\end_layout
-
-\begin_layout Itemize
-GPU-Berechnung
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "c"
-use_parbox 0
-width "35text%"
-special "none"
-height "1in"
-height_special "totalheight"
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/schnee.jpg
-	lyxscale 10
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-OpenGL
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Pixelshader 3.0
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Positions- und Rendering-Berechnung auf GPU
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Vermeidung CPU-GPU Flaschenhals
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-3D Position als RGBA-Texture
-\end_layout
-
-\begin_layout Itemize
-Geschwindigkeit als Texture
-\end_layout
-
-\begin_layout Itemize
-Kollisionserkennung
-\end_layout
-
-\begin_layout Itemize
-Heightmaps
-\end_layout
-
-\begin_layout EndFrame
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
 \begin_layout BeginFrame
 Details
 \end_layout
@@ -1879,13 +1868,101 @@ Kein Datentransfer (GPU-CPU) zur Laufzeit
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout BeginFrame
+OpenGL Speicher-Objekte
+\end_layout
+
+\begin_layout Itemize
+PixelShader 3.0 Speicher für:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Vertex Buffer + Render Target
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Vorteile:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Random Access to textures
+\end_layout
+
+\begin_layout Itemize
+Parallelism und Speicher-Bandbreite
+\end_layout
+
+\end_deeper
 \begin_layout Plain Layout
-Emission
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ATI Radeon 9800
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrame
+OpenGL Memory Objects
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Grafik mit MO in Memory
+\end_layout
+
+\begin_layout Plain Layout
++Ati Erweiterung erwähnen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
 \end_layout
 
 \begin_layout BeginFrame
 Emission
 \end_layout
+
+\begin_layout FrameSubtitle
+UberFlow
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
 \begin_inset Float figure
@@ -1909,12 +1986,98 @@ status collapsed
 
 \end_layout
 
-\begin_layout EndFrame
+\begin_layout Plain Layout
+2x 2D Texturen: r(t), v(r,t)
+\end_layout
 
+\begin_layout Plain Layout
+- in time steps erwähnen
+\end_layout
+
+\begin_layout Plain Layout
+(-> Particle Motion)
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Sortierung
+\end_layout
+
+\begin_layout FrameSubtitle
+UberFlow
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Sorting keys (2)
+\end_layout
+
+\begin_layout Plain Layout
+Identifiers
+\end_layout
+
+\begin_layout Plain Layout
+Ergebnis wieder in 2D RG Texture
+\end_layout
+
+\begin_layout Plain Layout
+Re-arrangement der 2 ersten Texturen
+\end_layout
+
+\begin_layout Plain Layout
+(Sortierung optimiert für Parallelität)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Collision Detection
+\end_layout
+
+\begin_layout FrameSubtitle
+UberFlow
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Adjacent Cells
+\end_layout
+
+\begin_layout Plain Layout
+Nachteile
+\end_layout
+
+\begin_layout Plain Layout
+(-> Collision Response, Umgebung, Rendering)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
 
 \end_layout
 
@@ -1959,95 +2122,6 @@ collision with different time stamps
 
 \end_layout
 
-\begin_layout Subsection
-Anwendungen
-\end_layout
-
-\begin_layout BeginFrame
-Anwendung
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Examp_cluster.jpg
-	lyxscale 15
-	height 45theight%
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Formula $ $
-\end_inset
-
-
-\begin_inset Graphics
-	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/WindtunnelRibbons.jpg
-	lyxscale 20
-	height 45theight%
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Windtunnel1.jpg
-	lyxscale 25
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\size tiny
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kipfer:2004fk"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout EndFrame
-
-\end_layout
-
 \begin_layout Section
 Zusammenfassung
 \end_layout
@@ -2082,7 +2156,7 @@ Sichtbarkeitssortierung
 \end_layout
 
 \begin_layout Itemize
-Parallele Partikel manipulations algorithmen 
+parallele Partikel-Manipulations-Algorithmen 
 \begin_inset Note Note
 status open
 
@@ -2096,7 +2170,7 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Echtzeitfähig
+echtzeitfähig
 \end_layout
 
 \begin_layout Itemize
@@ -2107,8 +2181,16 @@ Partikel-Dynamik
 GPU Sortierungs-Algorithmus
 \end_layout
 
+\begin_layout Itemize
+andere Physikmodelle implementierbar
+\end_layout
+
 \begin_layout EndFrame
 
+\end_layout
+
+\begin_layout Subsection
+UberFlow-Demo
 \end_layout
 
 \begin_layout BeginFrame
@@ -2120,38 +2202,17 @@ UberFlow
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-Inter-Partikel-Kollisionserkennung
-\end_layout
-
-\begin_layout Itemize
-Sorting
-\end_layout
-
-\begin_layout Itemize
-Physik-Engine
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \align center
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/wasserfall.jpg
 	lyxscale 10
-	scale 10
+	height 70theight%
 
 \end_inset
 
