@@ -340,6 +340,23 @@ Gliederung
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Erwähne:
+\end_layout
+
+\begin_layout Plain Layout
+-Schrittweise Hinführung zu GPU-Partikelsystem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
