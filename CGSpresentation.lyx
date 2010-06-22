@@ -1444,7 +1444,7 @@ status collapsed
 \end_layout
 
 \begin_layout Block
-Berechnung und Redering auf GPU
+Berechnung und Rendering auf GPU
 \end_layout
 
 \begin_layout EndFrame
@@ -1491,7 +1491,7 @@ hor_pos "c"
 has_inner_box 1
 inner_pos "c"
 use_parbox 0
-width "50text%"
+width "40text%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -1522,7 +1522,7 @@ hor_pos "c"
 has_inner_box 1
 inner_pos "c"
 use_parbox 0
-width "50text%"
+width "60text%"
 special "none"
 height "1in"
 height_special "totalheight"
@@ -1822,7 +1822,7 @@ time stamp (life cycle)
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout BeginFrame
 Details
@@ -1875,7 +1875,7 @@ Kein Datentransfer (GPU-CPU) zur Laufzeit
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout BeginFrame
 OpenGL Speicher-Objekte
@@ -1940,7 +1940,37 @@ Grafik mit MO in Memory
 \end_layout
 
 \begin_layout Plain Layout
-+Ati Erweiterung erwähnen
+-Ati Erweiterung erwähnen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Daten und Rendertargets im Grafikspeicher
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset External
+	template XFig
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/MemoryObjects.fig
+	width 50text%
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2003,6 +2033,65 @@ status collapsed
 
 \end_layout
 
+\begin_layout Itemize
+Partikelposition und Zeitstempel
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template XFig
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/ParticleTexture.fig
+	width 27text%
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Formula $\overbrace{\left(\begin{array}{c}
+R\\
+G\\
+B\\
+A\end{array}\right)^{n\; x\; n}=r(t)^{n\; x\; n}=\left(\begin{array}{c}
+x\\
+y\\
+z\\
+t\end{array}\right)^{n\; x\; n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+ähnlich für Geschwindigkeit und Windfeld
+\end_layout
+
 \begin_layout EndFrame
 
 \end_layout
@@ -2044,12 +2133,99 @@ Re-arrangement der 2 ersten Texturen
 
 \end_layout
 
+\begin_layout Enumerate
+nach Abstand zw.
+ Partikeln (Kollision?)
+\end_layout
+
+\begin_layout Enumerate
+nach Abstand zum Betrachter (Transparenz)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+sind beide unabhängig voneinander
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template XFig
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Sorting.fig
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Sortierungs-Schlüssel:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $x/g_{0}^{2}+y/g_{0}+z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Distanz zum Betrachter
+\end_layout
+
+\end_deeper
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+Speicherungin 2D-(RG)-Textur (Index+Schlüssel)
+\end_layout
+
+\begin_layout Itemize
+Sortierung (optimiert) und Anpassung der Partikel-position und Geschwindigkeit
+ (Texturen)
+\end_layout
+
 \begin_layout EndFrame
 
 \end_layout
 
 \begin_layout BeginFrame
-Collision Detection
+Kollisionserkennung
 \end_layout
 
 \begin_layout FrameSubtitle
@@ -2070,6 +2246,77 @@ Nachteile
 
 \begin_layout Plain Layout
 (-> Collision Response, Umgebung, Rendering)
+\end_layout
+
+\begin_layout Plain Layout
+Kollisionen zw.
+ dem Zeitraster können nicht erkannt werden
+\end_layout
+
+\begin_layout Plain Layout
+Abhängigkeiten: Zeit- und Gridraster
+\end_layout
+
+\begin_layout Plain Layout
+Reihenweise Sortierung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suche den nächsten Partikel in der (sortierten) 2D-Texture
+\end_layout
+
+\begin_layout Pause
+
+\end_layout
+
+\begin_layout Itemize
+2.
+ Sortierung mit anderem Schlüssel
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/CollisionGrid.png
+	lyxscale 25
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kipfer:2004fk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2126,6 +2373,10 @@ collision with different time stamps
 Zusammenfassung
 \end_layout
 
+\begin_layout Subsection
+Zusammenfassung und Demo
+\end_layout
+
 \begin_layout BeginFrame
 Zusammenfassung
 \end_layout
@@ -2152,11 +2403,17 @@ Inter-Partikel Kollisionenerkennung
 \end_layout
 
 \begin_layout Itemize
-Sichtbarkeitssortierung
+Sichtbarkeitssortierung 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+parallele Partikel-Manipulations-Algorithmen 
 \end_layout
 
-\begin_layout Itemize
-parallele Partikel-Manipulations-Algorithmen 
+\end_inset
+
+
 \begin_inset Note Note
 status open
 
@@ -2170,11 +2427,17 @@ status open
 \end_layout
 
 \begin_layout Itemize
-echtzeitfähig
+echtzeitfähig 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Partikel-Dynamik
 \end_layout
 
-\begin_layout Itemize
-Partikel-Dynamik
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2187,10 +2450,6 @@ andere Physikmodelle implementierbar
 
 \begin_layout EndFrame
 
-\end_layout
-
-\begin_layout Subsection
-UberFlow-Demo
 \end_layout
 
 \begin_layout BeginFrame
@@ -2212,6 +2471,7 @@ status open
 \begin_inset Graphics
 	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/wasserfall.jpg
 	lyxscale 10
+	width 90text%
 	height 70theight%
 
 \end_inset
