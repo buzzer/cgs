@@ -1145,7 +1145,7 @@ Partikelsystem
 \end_layout
 
 \begin_layout Itemize
-bisher: keine
+bisher: keine,
 \end_layout
 
 \begin_deeper
@@ -2283,7 +2283,7 @@ Reihenweise Sortierung
 \end_layout
 
 \begin_layout Itemize
-Suche den nächsten Partikel in der (sortierten) 2D-Textur
+suche den nächsten Partikel in der (sortierten) 2D-Textur
 \end_layout
 
 \begin_layout Pause
@@ -2304,7 +2304,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/CollisionGrid.png
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/CollisionGrid_.png
 	lyxscale 25
 	width 60text%
 
