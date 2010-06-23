@@ -1145,7 +1145,7 @@ Partikelsystem
 \end_layout
 
 \begin_layout Itemize
-Bisher, keine
+bisher: keine
 \end_layout
 
 \begin_deeper
@@ -1154,7 +1154,7 @@ Echtzeit
 \end_layout
 
 \begin_layout Itemize
-Partikel-zu-Partikel - Interaktion
+Partikel-zu-Partikel-Interaktion
 \end_layout
 
 \end_deeper
@@ -1210,16 +1210,16 @@ height_special "totalheight"
 status open
 
 \begin_layout Itemize
-Es soll echtzeitfähig sein, sowie Partikel untereinander reagieren lassen.
+es soll echtzeitfähig sein, sowie Partikel untereinander reagieren lassen
 \end_layout
 
 \begin_layout Itemize
-Sehr viele Partikel behandeln können
+sehr viele Partikel behandeln können
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-GPU Berechnung
+GPU-Berechnung
 \end_layout
 
 \end_deeper
@@ -1387,7 +1387,7 @@ Partikelsystem
 \end_layout
 
 \begin_layout Itemize
-Echtzeitfähig
+echtzeitfähig
 \end_layout
 
 \begin_layout Itemize
@@ -1428,7 +1428,7 @@ status collapsed
 \end_layout
 
 \begin_layout AlertBlock
-GPU-zu-CPU Datentransfer
+CPU-zu-GPU-Datentransfer
 \end_layout
 
 \begin_layout Pause
@@ -1584,16 +1584,16 @@ Positions- und Rendering-Berechnung auf GPU
 
 \begin_deeper
 \begin_layout Itemize
-Vermeidung CPU-GPU Flaschenhals
+Vermeidung CPU-GPU-Flaschenhals
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-3D Position als RGBA-Texture
+3D Position als RGBA-Textur
 \end_layout
 
 \begin_layout Itemize
-Geschwindigkeit als Texture
+Geschwindigkeit als Textur
 \end_layout
 
 \begin_layout Itemize
@@ -2134,7 +2134,7 @@ Identifiers
 \end_layout
 
 \begin_layout Plain Layout
-Ergebnis wieder in 2D RG Texture
+Ergebnis wieder in 2D RG Textur
 \end_layout
 
 \begin_layout Plain Layout
@@ -2151,8 +2151,7 @@ Re-arrangement der 2 ersten Texturen
 \end_layout
 
 \begin_layout Enumerate
-nach Abstand zw.
- Partikeln (Kollision?)
+nach Abstand zwischen Partikeln (Kollision)
 \end_layout
 
 \begin_layout Enumerate
@@ -2208,7 +2207,7 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-Sortierungs-Schlüssel:
+Sortierschlüssel:
 \end_layout
 
 \begin_deeper
@@ -2229,11 +2228,11 @@ Distanz zum Betrachter
 \end_layout
 
 \begin_layout Itemize
-Speicherungin 2D-(RG)-Textur (Index+Schlüssel)
+Speicherung in 2D-(RG)-Textur (Index + Schlüssel)
 \end_layout
 
 \begin_layout Itemize
-Sortierung (optimiert) und Anpassung der Partikel-position und Geschwindigkeit
+Sortierung (optimiert) und Anpassung der Partikel-Position und Geschwindigkeit
  (Texturen)
 \end_layout
 
@@ -2284,7 +2283,7 @@ Reihenweise Sortierung
 \end_layout
 
 \begin_layout Itemize
-Suche den nächsten Partikel in der (sortierten) 2D-Texture
+Suche den nächsten Partikel in der (sortierten) 2D-Textur
 \end_layout
 
 \begin_layout Pause
@@ -2399,7 +2398,7 @@ Zusammenfassung
 \end_layout
 
 \begin_layout Itemize
-Vermeidung des Bus-Flaschenhalses
+Vermeidung des Bus-Flaschenhals
 \end_layout
 
 \begin_deeper
@@ -2407,7 +2406,7 @@ Vermeidung des Bus-Flaschenhalses
 \begin_inset Quotes ald
 \end_inset
 
-Erstes
+erstes
 \begin_inset Quotes ard
 \end_inset
 
@@ -2416,7 +2415,7 @@ Erstes
 
 \end_deeper
 \begin_layout Itemize
-Inter-Partikel Kollisionenerkennung
+Inter-Partikel-Kollisionserkennung
 \end_layout
 
 \begin_layout Itemize
@@ -2458,7 +2457,7 @@ Partikel-Dynamik
 \end_layout
 
 \begin_layout Itemize
-GPU Sortierungs-Algorithmus
+GPU-Sortier-Algorithmen
 \end_layout
 
 \begin_layout Itemize
