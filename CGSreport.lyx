@@ -114,9 +114,9 @@ Universität Hamburg
 status open
 
 \begin_layout Plain Layout
-Dieser Bericht gibt eine Einführung in das Thema Model-Checking und führt
- anhand praktischer Beispiele mit dem Werkzeug SPIN durch den Verifikationsproze
-ss.
+TODO Dieser Bericht gibt eine Einführung in das Thema Model-Checking und
+ führt anhand praktischer Beispiele mit dem Werkzeug SPIN durch den Verifikation
+sprozess.
 \end_layout
 
 \end_inset
@@ -133,6 +133,34 @@ Partikelsystem
 \end_layout
 
 \begin_layout Standard
+Partikelsysteme stellen Funktionen zur Verfügung, die eine große Anzahl
+ von Objekten animieren können.
+ Damit können zum Beispiel im Bereich der Computergrafik physikalische Vorgänge
+ (wie Rauch) dargestellt werden.
+ Dies wäre mit konventionellen Methoden sehr komplex.
+ Mit einem Partikelsystem lässt sich der Gesamtprozess aber aufgrund relative
+ einfacher Bewegungsmodell von einzelnen Objekten, eben den Partikeln, modellier
+en.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Referenz Flocking systeme
+\end_layout
+
+\end_inset
+
+ Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:PartSmoke"
+
+\end_inset
+
+ zeigt ein Rauchdarstellung, die auf dem Bewegungsmodell vieler Partikel
+ beruht.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -160,6 +188,13 @@ Rauchpartikel [Wikipedia]
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:PartSmoke"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -172,6 +207,54 @@ Details
 \end_layout
 
 \begin_layout Standard
+Das Bewegungsmodell von Partikeln erlaubt ein Bewegungsmodell für das gesamte
+ zusammengesetzte Objekt.
+ Darauf basierend eignet sich ein solches System für sogenannte volumetrische
+ Effekte.
+ Gerade Feuer, Explosionen, Rauch und Flüssigkeiten werden in Animationen
+ und auch Computerspielen zunehmend gefordert.
+ Dabei kann das sich darunter befindliche physikalische Modell relative
+ einfachen Gesetzmäßigkeiten genügen.
+\end_layout
+
+\begin_layout Standard
+Für anspruchsvolleren Dynamik-Simulationen kann ein Partikelsystem noch
+ weitere Anforderungen gestellt werden.
+ Zum Einen sollen eventuell auch komplexere physikalische Modelle simuliert
+ werden (z.B.
+ Fliehkraft oder sogar mehrere Gravitationszentren) und zum Anderen sollen
+ Partikel auch unternander und nicht nur mit ihrer Umgebung interagieren.
+\end_layout
+
+\begin_layout Standard
+Ein Beispiel eines einfacheren aber optisch sehr überzeugenden Partikelsystems
+ ist ein in POV-Ray implementiertes von 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RuneParticleSys"
+
+\end_inset
+
+.
+ Abbildungen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:POVpart1"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:POVpart2"
+
+\end_inset
+
+ zeigen Animationsausschnitte fast fotorealischtischen Effekten.
+ In diesem System gibt es keine Partikel-zu-Partikel-Interaktion.
+ Natürlich hat es auch den Nachteil fehlender Interaktion (keine Echtzeit)
+ aufgrund der Implementierung als Ray-Tracer.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -225,11 +308,18 @@ key "RuneParticleSys"
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:POVpart1"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -283,6 +373,30 @@ key "RuneParticleSys"
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:POVpart2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Partikelparameter
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO
 \end_layout
 
 \end_inset
@@ -295,6 +409,61 @@ GPU-Partikelsysteme
 \end_layout
 
 \begin_layout Standard
+Für Simulationen oder Computerspiele kommt es in der Regel auf diese Echtzeitfäh
+igkeit an.
+ Regen oder Rauch muss sich realistisch in die Animationssequenz einfügen.
+ Einfache Physikmodelle halten die Berechnungskostem im Rahmen.
+ Doch um volumetrische Effekte einigermaßen sinnvoll einzusetzten bedarf
+ es in der Regel einer sehr großen Anzahl von Partikeln von einigen 1000
+ bis dem Tausendfachen, je nach Anwendung.
+ Solche Massen an Berechnungen könne von der CPU nicht mehr schnell genug
+ berechnet werden (und dann nebenbei noch andere Funktionen zu berechnen).
+\end_layout
+
+\begin_layout Standard
+Grafikarten (GPUs) bieten heute durch ihre massive Anzahl von parrallelen
+ Recheneinheiten die Möglichkeit viele Berechnungen gleichzeitig auszuführen.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NAme: SIMD?
+\end_layout
+
+\end_inset
+
+ Folgen eine kurze Liste, mit Überblickscharakter, möglicher (populärer)
+ GPU-Schnittstellen:
+\end_layout
+
+\begin_layout Itemize
+CUDA (NVIDIA)
+\end_layout
+
+\begin_layout Itemize
+OpenGL
+\end_layout
+
+\begin_layout Itemize
+ObenCL
+\end_layout
+
+\begin_layout Itemize
+DirectX (Microsoft Windows)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO einführung NVIDIA CUDa
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Float figure
 wide false
 sideways false
