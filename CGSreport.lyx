@@ -4,8 +4,9 @@
 \begin_header
 \textclass llncs
 \begin_preamble
-\usepackage{color}
-\usepackage{listings}
+%\usepackage{color}
+%\usepackage{listings}
+\usepackage{pdfsync}
 \end_preamble
 \use_default_options true
 \language ngerman
@@ -20,20 +21,19 @@
 \font_tt_scale 100
 
 \graphics default
+\float_placement H
 \paperfontsize default
 \spacing onehalf
 \use_hyperref true
-\pdf_title "Partikel-Systeme"
-\pdf_author "Sebastian Rockel"
-\pdf_subject "Computer Grafik Seminar 2010: Prozeduraler Content"
-\pdf_keywords "computer graphic,particle engine, system, GPU, UberFlow"
+\pdf_subject "Seminar Computergrafik 2010: Procedural Content Generation"
+\pdf_keywords "computer graphic, particle engine, system, GPU, UberFlow"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks true
 \pdf_pdfborder true
-\pdf_colorlinks false
+\pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
 \papersize default
@@ -60,13 +60,13 @@
 \begin_body
 
 \begin_layout Title
-Partikel Systeme
+A GPU-Based Particle Engine
 \end_layout
 
 \begin_layout Subtitle
 
 \size small
-Seminar Computer Grafik: Prozeduraler Content
+Seminar Computer Grafik: Procedural Content Generation
 \begin_inset Newline newline
 \end_inset
 
@@ -132,31 +132,89 @@ Einführung
 Partikelsystem
 \end_layout
 
-\begin_layout Subsection
-GPU-Programmierung
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Particles.jpg
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
 \end_layout
 
-\begin_layout Section
-UberFlow-Engine
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Rauchpartikel [Wikipedia]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Details
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Kipfer:2004fk"
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/flow/flow-poster.jpg
+	lyxscale 30
+	width 50text%
 
 \end_inset
 
 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "CUDA"
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/campfire/campfire-poster.jpg
+	lyxscale 30
+	width 50text%
 
 \end_inset
 
 
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wasserfluss und Feuer 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand cite
 key "RuneParticleSys"
 
 \end_inset
@@ -164,8 +222,398 @@ key "RuneParticleSys"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/hose/hose-poster.jpg
+	lyxscale 30
+	width 50text%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/smoketrail/smoketrail-poster.jpg
+	lyxscale 30
+	width 50text%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wasserfontäne und Rauch 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RuneParticleSys"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Optimierung
+GPU-Partikelsysteme
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/cuda_fluidsGL.png
+	lyxscale 10
+	height 17theight%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/cuda_nbody.png
+	lyxscale 10
+	height 17theight%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/cuda_particles.png
+	lyxscale 10
+	height 17theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Von links nach rechts: 2D-Wassersimulation, 3D-Galaxysimulation und 3D-Partikels
+imulation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CUDA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+UberFlow-Partikelsystem
+\end_layout
+
+\begin_layout Subsection
+Überblick
+\end_layout
+
+\begin_layout Subsection
+Anwendung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Examp_cluster.jpg
+	lyxscale 15
+	height 22theight%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/WindtunnelRibbons.jpg
+	lyxscale 20
+	height 22theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Strömungssimulation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kipfer:2004fk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Windtunnel1.jpg
+	lyxscale 25
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Strömungssimulation 2 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kipfer:2004fk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alles mit Texturen
+\end_layout
+
+\begin_layout Subsubsection
+Sortierung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template XFig
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/Sorting.fig
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sortierung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template XFig
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/MemoryObjects.fig
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+OpenGL: Memory Objects
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Kollisionserkennung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/collision_b.png
+	lyxscale 25
+	height 25theight%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/collision.jpg
+	lyxscale 25
+	height 25theight%
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Ohne (links) und mit (rechtes) Kollisionserkennung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
