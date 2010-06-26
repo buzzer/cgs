@@ -43,9 +43,9 @@
 \paperfontsize default
 \spacing single
 \use_hyperref true
-\pdf_title "Partikel-Systeme"
+\pdf_title "A GPU-Based Particle Engine"
 \pdf_author "Sebastian Rockel"
-\pdf_subject "Computer Grafik Seminar 2010: Prozeduraler Content"
+\pdf_subject "Seminar Computergrafik 2010: Procedural Content Generation"
 \pdf_keywords "computer graphic,particle engine, system, GPU, UberFlow"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered false
@@ -55,7 +55,7 @@
 \pdf_pdfborder true
 \pdf_colorlinks false
 \pdf_backref false
-\pdf_pdfusetitle true
+\pdf_pdfusetitle false
 \papersize default
 \use_geometry true
 \use_amsmath 1
