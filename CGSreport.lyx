@@ -437,6 +437,17 @@ Clockzyklen
  angegeben.
  Um die Anmation in gewissen Grenzen zu skalieren ist darüber hinaus eine
  maximale Anzahl von Partikeln festgelegt.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Mention Randomness
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -1017,6 +1028,17 @@ reference "eq:PartVek"
  Der Zeitstempel wird während der Animation benutzt um zu überpüfen, ob
  das Partikel schon sichtbar sein soll bzw.
  seine Lebensdauer schon überschritten hat.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO erwähne auch Velocity und Windfeld
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1162,8 +1184,6 @@ Für Methode 1 wird der dreidimensionale Raum in ein quatratisches Gitter
 \end_inset
 
 .
- Zusätzlich werd einem Partikel der Index der Gitterzelle, die ihn einschließt
- zugeordnet.
 \end_layout
 
 \begin_layout Itemize
@@ -1171,7 +1191,27 @@ Methode 2 speichert als Sortierschlüssel den Abstand des Partikels zum Betracht
 r.
 \end_layout
 
+\begin_layout Itemize
+Beide Methoden teilen jedem Partikel zusätzlich einen eindeutigen Index
+ zu.
+ 
+\end_layout
+
 \begin_layout Standard
+Partikel werden nun in einer zweidimensionalen (RG)-Textur mit ihrem Index
+ und Schlüssel gespeichert.
+ Die Textur wird nun reihenweise sortiert und gibt die neue Ordnung für
+ die Partikel Positions- und Geschwindigkeits-Texturen vor, die entsprechend
+ arrangiert werden.
+ Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:Sortierung"
+
+\end_inset
+
+ stellt die zwei verschiedenen Methoden schematisch dar.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -1193,7 +1233,8 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Sortierung
+Partikelsortierung: links für Kollisionserkennung, rechts für Transparenz-Effekt
+e
 \end_layout
 
 \end_inset
@@ -1217,11 +1258,137 @@ name "Fig:Sortierung"
  
 \end_layout
 
+\begin_layout Standard
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+ wurde viel Aufwand in den Sortieralgorithmus gesteckt, da er ein Schlüsseleleme
+nt des Partikelsystems ist und relative viel Rechenzeit benötigt.
+ In deren Arbeit wurde ein verbesserte 
+\emph on
+Bitonic
+\emph default
+-Sortieralgorithmus verwendet.
+ Anpassungen und Neuimplementierungen betrafen vor Allem die Minimierung
+ der auszuführenden Instruktionen per Shader und da insbesondere die Textur-Oper
+ationen.
+ Der Basisalgorithmus ist schon für die massive parrallele Ausführung auf
+ GPUs ausgelegt.
+\end_layout
+
 \begin_layout Subsubsection
 Kollisionserkennung
 \end_layout
 
 \begin_layout Standard
+Die sortierte zweidimensionale (RG)-Textur enthält die Nachbarbeziehung(en)
+ zwischen den Partikeln.
+ Rechts und links nah beieinander Liegende haben auch im dreidimensionalen
+ Raum eine geringe Entfernung.
+ Zur Laufzeit-Optimierung wird jedoch nur der nächste (Kollisions-) Partner
+ pro Partikel gesucht.
+\end_layout
+
+\begin_layout Standard
+Multiple Kollisionen bleiben so unentdeckt.
+ Des Weiteren hat die Zellbreite 
+\begin_inset Formula $g_{0}$
+\end_inset
+
+ direkten Einfluss auf die mögliche Anzahl von Partikeln in einer Zelle.
+ Es sind unter Umständen mehr als von einem Shaderprogramm überprüft werden
+ kann.
+ Die eigentliche Sortierung erfolgt entsprechend dem Zellindex, sodass es
+ passieren kann, dass die engsten Kollisionspartner in einer Reihe am weitesten
+ auseinander liegen und somit auch nicht erkannt werden.
+ Partikelkollisionen in adjazenten Zellen können aufgrund der Enumeration
+ der Gitterzellen nicht ohne weiteres erkannt werden.
+ Ein weiterer Nachteil betrifft die zeitliche Diskretisierung 
+\begin_inset Formula $dt$
+\end_inset
+
+, aufgrund dessen und abhängig von der Partikelgeschwindigkeit können Kollisione
+n, die zwischen aufeinander folgenden Bilder passieren, nicht detektiert
+ werden.
+\end_layout
+
+\begin_layout Standard
+Als (Teil-) Abhilfe sollte so die Zellenbreite 
+\begin_inset Formula $g_{0}$
+\end_inset
+
+ immer klein genug gewählt sein, um die Partikelanzahl in einer Zelle nicht
+ zu groß werden zu lassen.
+ Um Zellkollisionen in adjazenten Zellen zu entdecken werden alle Partikel
+ nach einem anderen Sortierschlüssel in einer zweiten Textur geordnet.
+ So können Kollisionspaare erkannt werden, die wenigstens nach einer Sortierung
+ in einer gemeinsamen Zelle enthalten sind (Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:2StepSort"
+
+\end_inset
+
+ ).
+ Obwohl insgesamt so in einigen Fällen keine Kollision erkannt wird ist
+ dies je nach Anwendung akzeptabel, da bei > 100.000 Partikel einige einfach
+ nicht auffallen (Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:KollisionVergl"
+
+\end_inset
+
+).
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/CollisionGrid__.png
+	lyxscale 15
+	height 20theight%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+2-Schrittpartikelsortierung: Kollisionserkennung manchmal erst im 2.
+ Schritt (schwarzes Raster)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:2StepSort"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset Float figure
 wide false
 sideways false
