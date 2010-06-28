@@ -66,7 +66,7 @@ A GPU-Based Particle Engine
 \begin_layout Subtitle
 
 \size small
-Seminar Computer Grafik: Procedural Content Generation
+Seminar Computergrafik: Procedural Content Generation
 \begin_inset Newline newline
 \end_inset
 
@@ -209,7 +209,7 @@ Details
 \begin_layout Standard
 Das Bewegungsmodell von Partikeln erlaubt ein Bewegungsmodell für das gesamte
  zusammengesetzte Objekt.
- Darauf basierend eignet sich ein solches System für sogenannte volumetrische
+ Darauf basierend eignet sich ein solches System für so genannte volumetrische
  Effekte.
  Gerade Feuer, Explosionen, Rauch und Flüssigkeiten werden in Animationen
  und auch Computerspielen zunehmend gefordert.
@@ -223,7 +223,7 @@ Für anspruchsvolleren Dynamik-Simulationen kann ein Partikelsystem noch
  Zum Einen sollen eventuell auch komplexere physikalische Modelle simuliert
  werden (z.B.
  Fliehkraft oder sogar mehrere Gravitationszentren) und zum Anderen sollen
- Partikel auch unternander und nicht nur mit ihrer Umgebung interagieren.
+ Partikel auch unter einander und nicht nur mit ihrer Umgebung interagieren.
 \end_layout
 
 \begin_layout Standard
@@ -250,7 +250,7 @@ reference "Fig:POVpart2"
 
 \end_inset
 
- zeigen Animationsausschnitte fast fotorealischtischen Effekten.
+ zeigen Animationsausschnitte fast fotorealistischen Effekten.
  In diesem System gibt es keine Partikel-zu-Partikel-Interaktion.
  Natürlich hat es auch den Nachteil fehlender Interaktion (keine Echtzeit)
  aufgrund der Implementierung als Ray-Tracer.
@@ -435,7 +435,7 @@ egung über die Zeit zu verringern.
 Clockzyklen
 \emph default
  angegeben.
- Um die Anmation in gewissen Grenzen zu skalieren ist darüber hinaus eine
+ Um die Animation in gewissen Grenzen zu skalieren ist darüber hinaus eine
  maximale Anzahl von Partikeln festgelegt.
  
 \begin_inset Note Note
@@ -536,7 +536,7 @@ reference "par:Externe-Kraefte"
 \begin_inset Formula $dt$
 \end_inset
 
- bezeichnet das Zeitinterval für eine Berechnung (der Partikelauslenkung).
+ bezeichnet das Zeitintervall für eine Berechnung (der Partikelauslenkung).
 \end_layout
 
 \begin_layout Standard
@@ -591,7 +591,7 @@ name "par:Externe-Kraefte"
 \begin_layout Standard
 Je nach Anwendung sind externe Kräfte wie Gravitation oder Wind notwendig.
  Dabei ist jede Art von (berechenbarem) Kräftefeld (oder auch mehrere sich
- beeinflussende) möglicht.
+ beeinflussende) möglich.
  Die Rechenzeit für die Partikel-Dynamik setzt hier eine Grenze.
 \end_layout
 
@@ -603,7 +603,7 @@ GPU-Partikelsysteme
 Für Simulationen oder Computerspiele kommt es in der Regel auf die Echtzeitfähig
 keit an.
  Regen oder Rauch muss sich realistisch in die Animationssequenz einfügen.
- Einfache Physikmodelle halten die Berechnungskostem im Rahmen.
+ Einfache Physikmodelle halten die Berechnungskosten im Rahmen.
  Doch um volumetrische Effekte einigermaßen sinnvoll einzusetzten bedarf
  es in der Regel einer sehr großen Anzahl von Partikeln von einigen 1000
  bis dem Tausendfachen, je nach Anwendung.
@@ -612,7 +612,7 @@ keit an.
 \end_layout
 
 \begin_layout Standard
-Grafikarten (GPUs) bieten heute durch ihre massive Anzahl von parrallelen
+Grafikarten (GPUs) bieten heute durch ihre massive Anzahl von parallelen
  Recheneinheiten die Möglichkeit viele Berechnungen gleichzeitig auszuführen.
  
 \begin_inset Note Note
@@ -773,7 +773,7 @@ reference "Par:RunePart"
 \end_inset
 
 ) ist es darüber hinaus echtzeitfähig.
- Das Rendering der Partikel geschiet auf der GPU, wenn auch die Partikel-
+ Das Rendering der Partikel geschieht auf der GPU, wenn auch die Partikel-
  (Positions-) Berechnung auf der CPU stattfindet.
  
 \begin_inset Note Note
@@ -828,7 +828,7 @@ key "Kipfer:2004fk"
 
 \begin_layout Standard
 Als GPU-Schnittstelle wurde OpenGL verwendet.
- In dessen aktuellen Standards bietet es das sogenannte 
+ In dessen aktuellen Standards bietet es das so genannte 
 \emph on
 Pixelshader 3.0
 \emph default
@@ -1025,7 +1025,7 @@ reference "eq:PartVek"
 \end_inset
 
 ).
- Der Zeitstempel wird während der Animation benutzt um zu überpüfen, ob
+ Der Zeitstempel wird während der Animation benutzt um zu überprüfen, ob
  das Partikel schon sichtbar sein soll bzw.
  seine Lebensdauer schon überschritten hat.
  
@@ -1067,14 +1067,14 @@ reference "sub:Ueberblick"
 
 \end_inset
 
- erwähnte Pixelshader 3.0-Modell ermöglicht es Speicherbereiche (sogenannte
+ erwähnte Pixelshader 3.0-Modell ermöglicht es Speicherbereiche (so genannte
  
 \emph on
 Memory Objects, MO
 \emph default
 ) für beliebige Daten anzufordern.
  Shaderprogramme können so Eingabedaten als MO bekommen um neue Daten in
- einem MO zu speichern, dass wieder als Eingabe für ein anderes Progamm
+ einem MO zu speichern, dass wieder als Eingabe für ein anderes Programm
  benutzt wird.
  Diese Speicherbereiche können in 
 \begin_inset Quotes gld
@@ -1084,7 +1084,7 @@ unsichtbare
 \begin_inset Quotes grd
 \end_inset
 
- bereiche des Grafikspeichers gespeichert werden, wenn sie nicht zum Rendern
+ Bereiche des Grafikspeichers gespeichert werden, wenn sie nicht zum Rendern
  vorgesehen sind.
  Abbildung 
 \begin_inset CommandInset ref
@@ -1143,8 +1143,8 @@ Sortierung
 \begin_layout Standard
 Die Sortierung der Partikel ist das Schlüsselelement für die korrekte Darstellun
 g der Partikel in der Rendering-Phase.
- Zum Einen müssen Partikel nach ihrem Abstand zueinander sortier werden
- um Kollisionnen zu erkennen 
+ Zum Einen müssen Partikel nach ihrem Abstand zueinander sortiert werden
+ um Kollisionen zu erkennen 
 \begin_inset Formula $(1)$
 \end_inset
 
@@ -1173,7 +1173,7 @@ Erwähne performance-unterschied in der zusammenfassung
 \end_layout
 
 \begin_layout Itemize
-Für Methode 1 wird der dreidimensionale Raum in ein quatratisches Gitter
+Für Methode 1 wird der dreidimensionale Raum in ein quadratisches Gitter
  mit der Kantenlänge 
 \begin_inset Formula $g_{0}$
 \end_inset
@@ -1276,7 +1276,7 @@ Bitonic
  Anpassungen und Neuimplementierungen betrafen vor Allem die Minimierung
  der auszuführenden Instruktionen per Shader und da insbesondere die Textur-Oper
 ationen.
- Der Basisalgorithmus ist schon für die massive parrallele Ausführung auf
+ Der Basisalgorithmus ist schon für die massive parallele Ausführung auf
  GPUs ausgelegt.
 \end_layout
 
@@ -1367,7 +1367,14 @@ status collapsed
 
 \begin_layout Plain Layout
 2-Schrittpartikelsortierung: Kollisionserkennung manchmal erst im 2.
- Schritt (schwarzes Raster)
+ Schritt (schwarzes Raster) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1430,7 +1437,14 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Ohne (links) und mit (rechtes) Kollisionserkennung
+Ohne (links) und mit (rechts) Kollisionserkennung 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
