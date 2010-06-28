@@ -255,6 +255,13 @@ reference "Fig:POVpart2"
  Natürlich hat es auch den Nachteil fehlender Interaktion (keine Echtzeit)
  aufgrund der Implementierung als Ray-Tracer.
  
+\begin_inset CommandInset label
+LatexCommand label
+name "Par:RunePart"
+
+\end_inset
+
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -389,19 +396,192 @@ name "Fig:POVpart2"
 
 \begin_layout Subsubsection
 Partikelparameter
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Partikelparameter"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Die Bewegung der Gesamtheit aller Partikel hängt von der Bewegung eines
+ einzelnen ab.
+ Dazu sind eine Reihe von (einfachen) Partikelparametern zu definieren.
+\end_layout
+
+\begin_layout Paragraph*
+Emission
+\end_layout
+
+\begin_layout Standard
+Die 
+\begin_inset Quotes gld
+\end_inset
+
+Lebensphase
+\begin_inset Quotes grd
+\end_inset
+
+ eines Partikels beginnt mit seiner Emission.
+ Dabei ist eine zunächst konstante Anfangsgeschwindigkeit festgelegt.
+ Dieser wirkt in der Regel eine (konstante) Dämpfung entgegen um die Partikelbew
+egung über die Zeit zu verringern.
+ Eine Lebensdauer legt die Zeit fest, in der sich ein Partikel in der Animation
+ befindet.
+ Sie wird meist in 
+\emph on
+Clockzyklen
+\emph default
+ angegeben.
+ Um die Anmation in gewissen Grenzen zu skalieren ist darüber hinaus eine
+ maximale Anzahl von Partikeln festgelegt.
+\end_layout
+
+\begin_layout Paragraph*
+Bewegung
+\end_layout
+
+\begin_layout Standard
+Das Bewegungsmodell selber hängt von der gewünschten Anwendung der Partikelsyste
+ms ab und kann nahezu beliebige (dynamische) Systeme implementieren.
+ In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+ wird zum Beispiel das Euler-Verfahren zur numerischen Integration des newtonsch
+en Grundgesetzes der Dynamik verwendet (Gleichung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PartVel"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PartPos"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{align}
+v(r,t+dt) & =v(r,t)+v_{ext}(r,t)+\frac{F}{m}+dt\label{eq:PartVel}\\
+r(t+dt) & =r(t)+\frac{1}{2}\Bigl(v(r,t)+v(r,t+dt)\Bigr)dt\label{eq:PartPos}\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Diese zwei Gleichungen verwenden die aktuelle Geschwindigkeit 
+\begin_inset Formula $v(r,t)$
+\end_inset
+
+ und Position 
+\begin_inset Formula $r(t)$
+\end_inset
+
+ abhängig von der Zeit 
+\begin_inset Formula $t$
+\end_inset
+
+ um die neuen Partikelparameter zu berechnen.
+ 
+\begin_inset Formula $v_{ext}$
+\end_inset
+
+ ist ein externes Windfeld, 
+\begin_inset Formula $F$
+\end_inset
+
+ ist eine externe Kraft (hier Gravitation) und 
+\begin_inset Formula $m$
+\end_inset
+
+ ist die Partikelmasse.
+ Externe Kräfte werden auch in Abschnitt 
+\emph on
+Externe Kräfte
+\emph default
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Externe-Kraefte"
+
+\end_inset
+
+ erklärt.
+ 
+\begin_inset Formula $dt$
+\end_inset
+
+ bezeichnet das Zeitinterval für eine Berechnung (der Partikelauslenkung).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{multline*}
+\end{multline*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Kollision
+\end_layout
+
+\begin_layout Standard
+Die Kollision eines Partikels wird in getrennt betrachtet in Abhängigkeit
+ mit der Umgebung und mit anderen Partikeln.
+ Manche Partikelsysteme verzichten komplett auf komplizierte Partikel-zu-Partike
+l-Interaktionen (siehe Runes Partikelsystem
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Par:RunePart"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Paragraph*
+Kollisionsreaktion
+\end_layout
+
+\begin_layout Standard
+Diese legt fest wie Partikel nach der Kollisionserkennung mit einem Objekte
+ reagieren soll.
+ Beispielsweise soll ein Wasser- anders reagieren als ein Rauch-Partikel
+ oder ein festes Objekt.
+\end_layout
+
+\begin_layout Paragraph*
+Externe Kräfte
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Externe-Kraefte"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Je nach Anwendung sind externe Kräfte wie Gravitation oder Wind notwendig.
+ Dabei ist jede Art von (berechenbarem) Kräftefeld (oder auch mehrere sich
+ beeinflussende) möglicht.
+ Die Rechenzeit für die Partikel-Dynamik setzt hier eine Grenze.
 \end_layout
 
 \begin_layout Subsection
@@ -409,8 +589,8 @@ GPU-Partikelsysteme
 \end_layout
 
 \begin_layout Standard
-Für Simulationen oder Computerspiele kommt es in der Regel auf diese Echtzeitfäh
-igkeit an.
+Für Simulationen oder Computerspiele kommt es in der Regel auf die Echtzeitfähig
+keit an.
  Regen oder Rauch muss sich realistisch in die Animationssequenz einfügen.
  Einfache Physikmodelle halten die Berechnungskostem im Rahmen.
  Doch um volumetrische Effekte einigermaßen sinnvoll einzusetzten bedarf
@@ -433,7 +613,7 @@ NAme: SIMD?
 
 \end_inset
 
- Folgen eine kurze Liste, mit Überblickscharakter, möglicher (populärer)
+ Es folgt eine kurze Liste, mit Überblickscharakter, möglicher (populärer)
  GPU-Schnittstellen:
 \end_layout
 
@@ -446,7 +626,7 @@ OpenGL
 \end_layout
 
 \begin_layout Itemize
-ObenCL
+OpenCL
 \end_layout
 
 \begin_layout Itemize
@@ -454,15 +634,49 @@ DirectX (Microsoft Windows)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO einführung NVIDIA CUDa
+Neben proprietären GPU-Schnittstellen wie CUDA und DirectX, sind OpenGL
+ und zunehmend auch OpenCL als hard- und betriebssystemunabhängige Standards
+ verbreitet.
 \end_layout
+
+\begin_layout Standard
+NVIDIA bietet mit dem CUDA-Software-Development-Kit 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CUDA"
 
 \end_inset
 
+ eine Reihe von Demo-Applikationen an, die auch einige Partikelsysteme mit
+ GPU-Berechnung umfassen (Abbildung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:NvidiaPart"
+
+\end_inset
+
+).
+ Darunter ist eine Art zweidimensionaler Wasssersimulation 
+\emph on
+fluidsGL
+\emph default
+, eine Galaxie-Simulation mit komplexeren Gravitationsmodell 
+\emph on
+nbody
+\emph default
+ und eine allgemeine Partikelsimulation 
+\emph on
+particles
+\emph default
+.
+ Letztere lässt die Partikelparameter (siehe Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Partikelparameter"
+
+\end_inset
+
+) frei einstellen und (interaktiv) deren Einfluss erkennen.
  
 \begin_inset Float figure
 wide false
@@ -523,11 +737,53 @@ key "CUDA"
 \end_inset
 
 
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:NvidiaPart"
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+ Als Entwicklungsschritt hin zu einem auf der GPU berechnetem Partikelsystem
+ hat dieses Demo die Animation relative vieler Partikel (> 30.000) zu bieten.
+ Im Gegensatz zu 
+\emph on
+Runes Partikelsystem 
+\emph default
+(
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Par:RunePart"
+
+\end_inset
+
+) ist es darüber hinaus echtzeitfähig.
+ Das Rendering der Partikel geschiet auf der GPU, wenn auch die Partikel-
+ (Positions-) Berechnung auf der CPU stattfindet.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO Referenz
+\end_layout
+
+\end_inset
+
+ Bedarf es einer größeren Anzahl an Partikeln (> 100.000) müssen sehr viele
+ Partikeldaten über den Bus von CPU zu GPU transportiert werden.
+ Die Animation ist dann busgegrenzt.
+\end_layout
+
+\begin_layout Standard
+Die Anforderung an ein Partikelsystem mit einer solchen Anzahl von Partikeln
+ ist die Berechnung auch der Partikelpositionen und somit der kompletten
+ Animation auf der GPU um (fast) jeglichen Bus-Transfer zwischen CPU und
+ GPU zu vermeiden.
 \end_layout
 
 \begin_layout Section
@@ -538,11 +794,76 @@ UberFlow-Partikelsystem
 Überblick
 \end_layout
 
+\begin_layout Standard
+Das UberFlow-Partikelsystem 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+ wurde mit dem Ziel entwickelt eine sehr große Anzahl von Partikeln (>100.000)
+ in Echtzeit zu berechnen.
+ Die Realisierung erfolgte in einer reinen GPU-Implementierung aller Algorithmen
+ um jegliche Bus-Belastung durch Daten-Transfers zu vermeiden.
+\end_layout
+
+\begin_layout Standard
+Als GPU-Schnittstelle wurde OpenGL verwendet.
+ In dessen aktuellen Standards bietet es das sogenannte 
+\emph on
+Pixelshader 3.0
+\emph default
+ -Modell an.
+ Dabei werden den Shadern (parallele GPU-Programme) Speicherobjekte zu beliebige
+m Einsatz (also nicht nur zum Rendern) angeboten.
+ Das ermöglicht eine flexible Programmierung nach dem Vorbild von CPU-(Host)-Pro
+grammen.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Forward-Reference
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Priorität liegt auf der korrekten grafischen Darstellung der Partikel und
+ der Kollisionserkennung.
+ Die Berechnungen sind optimiert für Umgebungen mit Heightmaps.
+\end_layout
+
 \begin_layout Subsection
 Anwendung
 \end_layout
 
 \begin_layout Standard
+Die Kombination aus dem verwendeten Bewegungsmodell und der riesigen Anzahl
+ an darstellbaren Partikeln eignet sich sehr gut für Strömungssimulationen,
+ wie in Abbildungen 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Fig:AnwStroem1"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "Fig:AnwStroem2"
+
+\end_inset
+
+ gezeigt.
+ Dabei können sämtliche Simulationsparameter in echtzeit geändert und deren
+ Einfluss gezeigt werden.
+ Unterschiedliche Darstellungen der Partikel sind möglich.
+ 
 \begin_inset Float figure
 wide false
 sideways false
@@ -576,7 +897,11 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Strömungssimulation 
+Strömungssimulation, rechts Darstellung der Partikel als 
+\emph on
+Ribbons
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kipfer:2004fk"
@@ -585,6 +910,13 @@ key "Kipfer:2004fk"
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:AnwStroem1"
 
 \end_inset
 
@@ -615,7 +947,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Strömungssimulation 2 
+Strömungssimulation 2: Partikeldarstellung mit einzelnen Punkten 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kipfer:2004fk"
@@ -624,6 +956,13 @@ key "Kipfer:2004fk"
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Fig:AnwStroem2"
 
 \end_inset
 
@@ -637,6 +976,41 @@ key "Kipfer:2004fk"
 
 \begin_layout Subsection
 Alles mit Texturen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset External
+	template XFig
+	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/MemoryObjects.fig
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+OpenGL: Memory Objects
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -680,42 +1054,6 @@ Sortierung
 \end_inset
 
  
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset External
-	template XFig
-	filename /Users/sebastian/Documents/_Master/Hamburg/_SS10/_ComputerGraphic/_Seminar/media/MemoryObjects.fig
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-OpenGL: Memory Objects
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -727,10 +1065,6 @@ Kollisionserkennung
 wide false
 sideways false
 status collapsed
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \align center
