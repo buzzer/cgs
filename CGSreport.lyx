@@ -759,7 +759,12 @@ name "Fig:NvidiaPart"
 
 \end_inset
 
- Als Entwicklungsschritt hin zu einem auf der GPU berechnetem Partikelsystem
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Als Entwicklungsschritt hin zu einem auf der GPU berechnetem Partikelsystem
  hat dieses Demo die Animation relative vieler Partikel (> 30.000) zu bieten.
  Im Gegensatz zu 
 \emph on
@@ -1060,6 +1065,7 @@ t\end{array}\right)^{n\; x\; n}\label{eq:PartVek}\end{equation}
 \end_layout
 
 \begin_layout Standard
+\noindent
 Das in Abschnitt 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1116,7 +1122,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-OpenGL: Memory Objects
+GPU-Shader-Programme: Speicheranforderung mittels OpenGL Memory Objects
 \end_layout
 
 \end_inset
@@ -1233,8 +1239,8 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Partikelsortierung: links für Kollisionserkennung, rechts für Transparenz-Effekt
-e
+Partikelsortierung: links Gitter für Kollisionserkennung, rechts Abstand
+ zum Betrachter für Transparenz-Effekte
 \end_layout
 
 \end_inset
@@ -1259,6 +1265,7 @@ name "Fig:Sortierung"
 \end_layout
 
 \begin_layout Standard
+\noindent
 In 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1469,7 +1476,186 @@ name "Fig:KollisionVergl"
 \end_layout
 
 \begin_layout Section
-Zusammenfassung
+Diskussion
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Itemize
+Wie gut funktionert die Methode? Wie gut sind die Resultate?
+\end_layout
+
+\begin_layout Itemize
+Wie gut ist sie im Vergleich mit anderen Methoden?
+\end_layout
+
+\begin_layout Itemize
+Wie passt dieses Paper zum Forschungsstand auf diesem Gebiet?
+\end_layout
+
+\begin_layout Itemize
+Wie ist dieses Paper zu bewerten?
+\end_layout
+
+\begin_layout Itemize
+Zukünftige Arbeit: Was könnte getan werden? Wie könnte es verbessert werden?
+ Ideen für zukünftige Forschungsvorhaben.
+\end_layout
+
+\begin_layout Itemize
+Fazit
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+-Missing collisions
+\end_layout
+
+\begin_layout Plain Layout
+-Ati erweiterungen, superbuffers, optimierung
+\end_layout
+
+\begin_layout Plain Layout
++vermeidung CPU-GPU transfer
+\end_layout
+
+\begin_layout Plain Layout
++speed up computation and rendering large geometry data
+\end_layout
+
+\begin_layout Plain Layout
++Integrating any physical model
+\end_layout
+
+\begin_layout Plain Layout
++pushes other applications that rely heavily on sorting
+\end_layout
+
+\end_inset
+
+ Der Schritt von reinen CPU-Partikelsystemen hin zu GPU-Systemen bietet
+ die neben den bekannten Möglichkeiten einer Physiksimulation auch die Interakti
+vität bei einer sehr großen Anzahl von Partikeln.
+ Das in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
+
+\end_inset
+
+ vorgestellte Partikelsystem nimmt sich vor die Performance existierender
+ GPU-Systeme durch die intelligente Implementierung von Algorithmen zur
+ Partikel-Erzeugung, Manipulation und Darstellung auf der GPU wesentlich
+ zu steigern.
+ Als Grafikschnittstelle wurde das plattformübergreifend OpenGL, jedoch
+ mit einer 
+\emph on
+ATI
+\emph default
+ spezifischen Erweiterung zur Laufzeitoptimierung.
+ Laut den Autoren ist es das erste Partikelsystem, dass zur Vermeidung des
+ CPU-GPU-Busses, zur Laufzeit komplett auf der GPU ausgeführt wird.
+ Partikel-Partikel-Kollisionen werden erkannt, genauso wie solche mit Heightmaps.
+ Eine für GPUs optimierte Sortierung wurde auch zur Sichtbarkeitssortierung
+ implementiert, lässt sich darüber hinaus auch als generische Methode für
+ nahezu allen Bereiche verwenden, in der Aufgaben es erfordern große Datenmengen
+ zu ordnen.
+ Damit ist es möglich den aktuellen Trend nach Ausnutzung der massiven parallele
+n Rechenkraft aktueller Grafikkarten auszubauen.
+ Weiterhin lassen sich auch andere Physikalische Modelle, je nach Anwendung,
+ in dieses Partikelsystem integrieren.
+\end_layout
+
+\begin_layout Standard
+Die presentierten Resultate im Artikel, also auch im Demovideo 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "TUM:2004fk"
+
+\end_inset
+
+, sind beeindruckend.
+ Laut den presentierten Ergebnissen funktioniert die implementierte Variante
+ bereits sehr gut.
+ Man kann die Anzahl der dargestellten Partikel (und versucht die Randbedingunge
+n vergleichbar zu halten) mit dem in dieser Arbeit erwähnten Partikelsystem
+ von NVIDIA, 
+\emph on
+particles
+\emph default
+, vergleichen.
+ Es ermöglicht GPU-beschleunigte Berechnung und Darstellung von ca.
+ 32 tausend Partikeln inklusive Partikel-Partikel- und Umgebungskollision.
+ Dabei wird eine moderate Echtzeit von ca.
+ 20 bis 24 Bilder pro Sekunder auf dem Laptop des Autors erreicht.
+ Die Ergebnisse des Artikels zeigen eine ähnlich Framerate (31) bei vergleichbar
+en Bedingungen aber mit ca.
+ 262 tausend (
+\begin_inset Formula $512^{2}$
+\end_inset
+
+) Partikeln.
+ Bei 1 Million Partikel (
+\begin_inset Formula $1024^{2}$
+\end_inset
+
+) sind es immernoch 7 und bei deaktivierter Partikel-Partikel-Kollisionserkennun
+g sogar 42 Bilder pro Sekunde.
+\end_layout
+
+\begin_layout Standard
+Partikelsysteme sind heute bereits weit verbreitet und erfreuen sich großer
+ Anwendung in Computerspielen, Animationen und Simulationen.
+ Die Grundlagen dazu sind erkannt und publiziert 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RuneParticleSys,Kipfer:2004fk"
+
+\end_inset
+
+.
+ Das verwendete Physikmodell kann aber noch Gegenstand aktueller Forschung
+ sein und kann in dem vorgestelltem Partikelsystem implementiert, getestet
+ und angewandt werden.
+\end_layout
+
+\begin_layout Standard
+Der Artikel diskutiert objektiv aktuelle Methoden der Sortierung und Partikelsys
+teme für GPUs.
+ Die verwendeten Grafikschnittstellen von OpenGL werden nur im Ansatz erwähnt.
+ Des Weiteren wird auf die Grundlagen von Partikelsystemen nicht detailiert
+ eingegangen.
+ Dagegen ausführlich werden die Algorithmen zur Sortierung und Kollisionserkennu
+ng und ihre Nachteile dargelegt und diverse Anwendungen am Ende angedeutet.
+\end_layout
+
+\begin_layout Standard
+In zukünftigen Arbeiten kann man momentanen Nachteile des vorgestellten
+ Systems beseitigen.
+ Die nicht entdeckten Kollisionen sollten weiter minimiert werden und auch
+ Algorithmen implementiert werden, die Mehrfachkollisionen erkennen.
+ Auch die proprietären Erweiterungen von einem Grafikkartenhersteller sollten
+ einem geräteunabhängiger Implementierung weichen um potentielle Hardwareunterst
+ützung zu erweitern.
+ Die Implementierung anderer Physikmodelle kann neue interessante Anwendungen
+ ermöglichen.
+\end_layout
+
+\begin_layout Standard
+Partikelsysteme sind ein Paradebeispiel um komplexe Effekte mittels prozeduraler
+ Inhaltsgenerierung in der Computergrafik handhabbar zu machen und geeignet
+ darzustellen.
+ Der Artikel geht nur auf die notwendigen Details des vorgestellten Partikelsyst
+ems ein, aber auf diese richtig.
+ Das Thema ist interessant und optisch ansprechend und bietet potential
+ für zukünftige Arbeiten.
 \end_layout
 
 \begin_layout Standard
