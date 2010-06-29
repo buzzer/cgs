@@ -121,7 +121,26 @@ sprozess.
 
 \end_inset
 
+ Dieser Bericht gibt eine Einführung in GPU-basierte Partikelsysteme.
+ Es wird schrittweise versucht von allgemeinen Partikelsystemgrundlagen
+ und Beispielen die Entwicklung hin zu einem komplett auf der GPU ausgeführten
+ Systems nachzuvollziehen.
+ Dazu wurde die Recherche hauptsächlich auf Basis des Artikels von 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kipfer:2004fk"
 
+\end_inset
+
+ und dem darin vorgestellten Partikelsystems 
+\emph on
+UberFlow
+\emph default
+ gemacht.
+ Darüber hinaus werden Vergleiche mit anderen aktuellen GPU-basierten Systemen
+ angeregt.
+ Vor- und Nachteile des vorgestellen Systems werden in einer abschließenden
+ Betrachtung diskutiert.
 \end_layout
 
 \begin_layout Section
