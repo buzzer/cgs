@@ -110,21 +110,10 @@ Universität Hamburg
 \end_layout
 
 \begin_layout Abstract
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO Dieser Bericht gibt eine Einführung in das Thema Model-Checking und
- führt anhand praktischer Beispiele mit dem Werkzeug SPIN durch den Verifikation
-sprozess.
-\end_layout
-
-\end_inset
-
- Dieser Bericht gibt eine Einführung in GPU-basierte Partikelsysteme.
+Dieser Bericht gibt eine Einführung in GPU-basierte Partikelsysteme.
  Es wird schrittweise versucht von allgemeinen Partikelsystemgrundlagen
  und Beispielen die Entwicklung hin zu einem komplett auf der GPU ausgeführten
- Systems nachzuvollziehen.
+ System nachzuvollziehen.
  Dazu wurde die Recherche hauptsächlich auf Basis des Artikels von 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -132,15 +121,14 @@ key "Kipfer:2004fk"
 
 \end_inset
 
- und dem darin vorgestellten Partikelsystems 
+ und dem darin vorgestellten Partikelsystem 
 \emph on
 UberFlow
 \emph default
  gemacht.
  Darüber hinaus werden Vergleiche mit anderen aktuellen GPU-basierten Systemen
- angeregt.
- Vor- und Nachteile des vorgestellen Systems werden in einer abschließenden
- Betrachtung diskutiert.
+ angeregt, sowie Vor- und Nachteile des vorgestellten Systems in einer abschließ
+enden Betrachtung diskutiert.
 \end_layout
 
 \begin_layout Section
@@ -157,9 +145,9 @@ Partikelsysteme stellen Funktionen zur Verfügung, die eine große Anzahl
  Damit können zum Beispiel im Bereich der Computergrafik physikalische Vorgänge
  (wie Rauch) dargestellt werden.
  Dies wäre mit konventionellen Methoden sehr komplex.
- Mit einem Partikelsystem lässt sich der Gesamtprozess aber aufgrund relative
- einfacher Bewegungsmodell von einzelnen Objekten, eben den Partikeln, modellier
-en.
+ Mit einem Partikelsystem lässt sich der Gesamtprozess aber aufgrund relativ
+ einfacher Bewegungsmodelle von einzelnen Objekten, eben den Partikeln,
+ modellieren.
  
 \begin_inset Note Note
 status open
@@ -177,7 +165,7 @@ reference "Fig:PartSmoke"
 
 \end_inset
 
- zeigt ein Rauchdarstellung, die auf dem Bewegungsmodell vieler Partikel
+ zeigt ein Rauchdarstellung, die auf dem Bewegungsmodell einzelner Partikel
  beruht.
  
 \begin_inset Float figure
@@ -226,27 +214,27 @@ Details
 \end_layout
 
 \begin_layout Standard
-Das Bewegungsmodell von Partikeln erlaubt ein Bewegungsmodell für das gesamte
- zusammengesetzte Objekt.
+Das Bewegungsmodell von Partikeln ergibt ein Modell für das gesamte zusammengese
+tzte Objekt.
  Darauf basierend eignet sich ein solches System für so genannte volumetrische
  Effekte.
  Gerade Feuer, Explosionen, Rauch und Flüssigkeiten werden in Animationen
  und auch Computerspielen zunehmend gefordert.
- Dabei kann das sich darunter befindliche physikalische Modell relative
- einfachen Gesetzmäßigkeiten genügen.
+ Dabei kann das sich darunter befindliche physikalische Modell mit relativ
+ einfachen Gesetzmäßigkeiten begnügen.
 \end_layout
 
 \begin_layout Standard
-Für anspruchsvolleren Dynamik-Simulationen kann ein Partikelsystem noch
+Für anspruchsvollere Dynamik-Simulationen können an ein Partikelsystem noch
  weitere Anforderungen gestellt werden.
  Zum Einen sollen eventuell auch komplexere physikalische Modelle simuliert
  werden (z.B.
  Fliehkraft oder sogar mehrere Gravitationszentren) und zum Anderen sollen
- Partikel auch unter einander und nicht nur mit ihrer Umgebung interagieren.
+ Partikel auch unter einander, und nicht nur mit ihrer Umgebung, interagieren.
 \end_layout
 
 \begin_layout Standard
-Ein Beispiel eines einfacheren aber optisch sehr überzeugenden Partikelsystems
+Ein Beispiel eines einfachen aber optisch sehr überzeugenden Partikelsystems
  ist ein in POV-Ray implementiertes von 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -269,7 +257,7 @@ reference "Fig:POVpart2"
 
 \end_inset
 
- zeigen Animationsausschnitte fast fotorealistischen Effekten.
+ zeigen Animationsausschnitte fast fotorealistischer Effekte.
  In diesem System gibt es keine Partikel-zu-Partikel-Interaktion.
  Natürlich hat es auch den Nachteil fehlender Interaktion (keine Echtzeit)
  aufgrund der Implementierung als Ray-Tracer.
@@ -426,7 +414,7 @@ name "sub:Partikelparameter"
 
 \begin_layout Standard
 Die Bewegung der Gesamtheit aller Partikel hängt von der Bewegung eines
- einzelnen ab.
+ Einzelnen ab.
  Dazu sind eine Reihe von (einfachen) Partikelparametern zu definieren.
 \end_layout
 
@@ -443,12 +431,12 @@ Lebensphase
 \begin_inset Quotes grd
 \end_inset
 
- eines Partikels beginnt mit seiner Emission.
+ eines Partikels beginnt mit seiner Platzierung am Emitter.
  Dabei ist eine zunächst konstante Anfangsgeschwindigkeit festgelegt.
  Dieser wirkt in der Regel eine (konstante) Dämpfung entgegen um die Partikelbew
 egung über die Zeit zu verringern.
- Eine Lebensdauer legt die Zeit fest, in der sich ein Partikel in der Animation
- befindet.
+ Eine Lebensdauer legt das Zeitfenster fest, in der sich ein Partikel in
+ der Animation befindet.
  Sie wird meist in 
 \emph on
 Clockzyklen
@@ -474,8 +462,8 @@ Bewegung
 \end_layout
 
 \begin_layout Standard
-Das Bewegungsmodell selber hängt von der gewünschten Anwendung der Partikelsyste
-ms ab und kann nahezu beliebige (dynamische) Systeme implementieren.
+Das Bewegungsmodell selber hängt von der gewünschten Anwendung des Partikelsyste
+ms ab und kann nahezu beliebige (auch dynamische) Systeme implementieren.
  In 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -484,7 +472,7 @@ key "Kipfer:2004fk"
 \end_inset
 
  wird zum Beispiel das Euler-Verfahren zur numerischen Integration des newtonsch
-en Grundgesetzes der Dynamik verwendet (Gleichung 
+en Grundgesetzes der Dynamik verwendet (siehe Gleichung 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:PartVel"
@@ -572,8 +560,8 @@ Kollision
 \end_layout
 
 \begin_layout Standard
-Die Kollision eines Partikels wird in getrennt betrachtet in Abhängigkeit
- mit der Umgebung und mit anderen Partikeln.
+Die Kollision eines Partikels wird in zweierlei Hinsicht getrennt betrachtet,
+ und zwar in Abhängigkeit mit der Umgebung und mit anderen Partikeln.
  Manche Partikelsysteme verzichten komplett auf komplizierte Partikel-zu-Partike
 l-Interaktionen (siehe Runes Partikelsystem
 \begin_inset CommandInset ref
@@ -590,8 +578,8 @@ Kollisionsreaktion
 \end_layout
 
 \begin_layout Standard
-Diese legt fest wie Partikel nach der Kollisionserkennung mit einem Objekte
- reagieren soll.
+Diese legt fest wie ein Partikel nach der Kollisionserkennung mit einem
+ Objekt reagieren soll.
  Beispielsweise soll ein Wasser- anders reagieren als ein Rauch-Partikel
  oder ein festes Objekt.
 \end_layout
@@ -611,7 +599,7 @@ name "par:Externe-Kraefte"
 Je nach Anwendung sind externe Kräfte wie Gravitation oder Wind notwendig.
  Dabei ist jede Art von (berechenbarem) Kräftefeld (oder auch mehrere sich
  beeinflussende) möglich.
- Die Rechenzeit für die Partikel-Dynamik setzt hier eine Grenze.
+ Die Rechenzeit für die Partikel-Dynamik setzt hier eine praktische Grenze.
 \end_layout
 
 \begin_layout Subsection
@@ -627,7 +615,8 @@ keit an.
  es in der Regel einer sehr großen Anzahl von Partikeln von einigen 1000
  bis dem Tausendfachen, je nach Anwendung.
  Solche Massen an Berechnungen könne von der CPU nicht mehr schnell genug
- berechnet werden (und dann nebenbei noch andere Funktionen zu berechnen).
+ berechnet werden (und nebenbei müssen noch andere Funktionen berechnet
+ werden).
 \end_layout
 
 \begin_layout Standard
@@ -665,7 +654,7 @@ DirectX (Microsoft Windows)
 
 \begin_layout Standard
 Neben proprietären GPU-Schnittstellen wie CUDA und DirectX, sind OpenGL
- und zunehmend auch OpenCL als hard- und betriebssystemunabhängige Standards
+ und zunehmend auch OpenCL als hardware- und betriebssystemunabhängige Standards
  verbreitet.
 \end_layout
 
@@ -686,11 +675,11 @@ reference "Fig:NvidiaPart"
 \end_inset
 
 ).
- Darunter ist eine Art zweidimensionaler Wasssersimulation 
+ Darunter ist eine Art zweidimensionaler Wassersimulation 
 \emph on
 fluidsGL
 \emph default
-, eine Galaxie-Simulation mit komplexeren Gravitationsmodell 
+, eine Galaxie-Simulation mit komplexerem Gravitationsmodell 
 \emph on
 nbody
 \emph default
@@ -783,7 +772,7 @@ name "Fig:NvidiaPart"
 
 \begin_layout Standard
 \noindent
-Als Entwicklungsschritt hin zu einem auf der GPU berechnetem Partikelsystem
+Als Entwicklungsschritt hin zu einem auf der GPU berechneten Partikelsystem,
  hat dieses Demo die Animation relative vieler Partikel (> 30.000) zu bieten.
  Im Gegensatz zu 
 \emph on
@@ -797,7 +786,7 @@ reference "Par:RunePart"
 \end_inset
 
 ) ist es darüber hinaus echtzeitfähig.
- Das Rendering der Partikel geschieht auf der GPU, wenn auch die Partikel-
+ Das Rendern der Partikel geschieht auf der GPU, wenn auch die Partikel-
  (Positions-) Berechnung auf der CPU stattfindet.
  
 \begin_inset Note Note
@@ -811,13 +800,13 @@ TODO Referenz
 
  Bedarf es einer größeren Anzahl an Partikeln (> 100.000) müssen sehr viele
  Partikeldaten über den Bus von CPU zu GPU transportiert werden.
- Die Animation ist dann busgegrenzt.
+ Die Durchsatzrate bei der Animation ist dann busbegrenzt.
 \end_layout
 
 \begin_layout Standard
-Die Anforderung an ein Partikelsystem mit einer solchen Anzahl von Partikeln
- ist die Berechnung auch der Partikelpositionen und somit der kompletten
- Animation auf der GPU um (fast) jeglichen Bus-Transfer zwischen CPU und
+Die Anforderung an ein Partikelsystem mit einer solchen Anzahl von Partikeln,
+ ist die Berechnung auch der Partikelpositionen, und somit der kompletten
+ Animation, auf der GPU, um (fast) jeglichen Bus-Transfer zwischen CPU und
  GPU zu vermeiden.
 \end_layout
 
@@ -846,13 +835,14 @@ key "Kipfer:2004fk"
 
  wurde mit dem Ziel entwickelt eine sehr große Anzahl von Partikeln (>100.000)
  in Echtzeit zu berechnen.
- Die Realisierung erfolgte in einer reinen GPU-Implementierung aller Algorithmen
- um jegliche Bus-Belastung durch Daten-Transfers zu vermeiden.
+ Die Realisierung erfolgte in einer reinen GPU-Implementierung von allen
+ daran beteiligten Algorithmen, um jegliche Bus-Belastung durch Daten-Transfers
+ zu vermeiden.
 \end_layout
 
 \begin_layout Standard
 Als GPU-Schnittstelle wurde OpenGL verwendet.
- In dessen aktuellen Standards bietet es das so genannte 
+ In dessen aktuellen Standard bietet es das so genannte 
 \emph on
 Pixelshader 3.0
 \emph default
@@ -877,7 +867,7 @@ Forward-Reference
 \begin_layout Standard
 Priorität liegt auf der korrekten grafischen Darstellung der Partikel und
  der Kollisionserkennung.
- Die Berechnungen sind optimiert für Umgebungen mit Heightmaps.
+ Die Berechnungen sind optimiert für Darstellungen mit Heightmaps.
 \end_layout
 
 \begin_layout Subsection
@@ -902,9 +892,23 @@ reference "Fig:AnwStroem2"
 \end_inset
 
  gezeigt.
- Dabei können sämtliche Simulationsparameter in echtzeit geändert und deren
+ Dabei können sämtliche Simulationsparameter in Echtzeit geändert und deren
  Einfluss gezeigt werden.
- Unterschiedliche Darstellungen der Partikel sind möglich.
+ Unterschiedliche Darstellungen der Partikel sind möglich (Abbildungen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:AnwStroem1"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Fig:AnwStroem2"
+
+\end_inset
+
+).
  
 \begin_inset Float figure
 wide false
@@ -1021,7 +1025,7 @@ Alles mit Texturen
 \end_layout
 
 \begin_layout Standard
-Um das Potential von modernen GPUs auszunutzen reicht es nicht aus existierende
+Um das Potential von modernen GPUs auszunutzen reicht es nicht aus, existierende
  CPU-Algorithmen zu portieren.
  Die Shadereinheiten auf GPUs sind optimiert um Daten zu verarbeiten, die
  als Textur vorliegen.
@@ -1105,11 +1109,11 @@ Memory Objects, MO
 \begin_inset Quotes gld
 \end_inset
 
-unsichtbare
+unsichtbaren
 \begin_inset Quotes grd
 \end_inset
 
- Bereiche des Grafikspeichers gespeichert werden, wenn sie nicht zum Rendern
+ Regionen des Grafikspeichers gehalten werden, wenn sie nicht zum Rendern
  vorgesehen sind.
  Abbildung 
 \begin_inset CommandInset ref
@@ -1173,7 +1177,7 @@ g der Partikel in der Rendering-Phase.
 \begin_inset Formula $(1)$
 \end_inset
 
-, zum Anderen muss für eine (halb-)transparente Darstellung von Partikeln
+, zum Anderen muss für eine (halb-) transparente Darstellung von Partikeln
  die Entfernung dieser zum Betrachter berücksichtigt werden 
 \begin_inset Formula $(2)$
 \end_inset
@@ -1225,9 +1229,9 @@ Beide Methoden teilen jedem Partikel zusätzlich einen eindeutigen Index
 \begin_layout Standard
 Partikel werden nun in einer zweidimensionalen (RG)-Textur mit ihrem Index
  und Schlüssel gespeichert.
- Die Textur wird nun reihenweise sortiert und gibt die neue Ordnung für
- die Partikel Positions- und Geschwindigkeits-Texturen vor, die entsprechend
- arrangiert werden.
+ Die Textur wird reihenweise sortiert und gibt die neue Ordnung für die
+ erwähnten Partikel-Positions- und Geschwindigkeits-Texturen vor, die entspreche
+nd neu geordnet werden.
  Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1292,18 +1296,18 @@ key "Kipfer:2004fk"
 
 \end_inset
 
- wurde viel Aufwand in den Sortieralgorithmus gesteckt, da er ein Schlüsseleleme
-nt des Partikelsystems ist und relative viel Rechenzeit benötigt.
- In deren Arbeit wurde ein verbesserte 
+ wurde viel Aufwand in den Sortieralgorithmus gesteckt, da er ein wichtiger
+ Teil des Partikelsystems ist und relativ viel Rechenzeit benötigt.
+ In dem Artikel wurde ein verbesserter 
 \emph on
 Bitonic
 \emph default
 -Sortieralgorithmus verwendet.
- Anpassungen und Neuimplementierungen betrafen vor Allem die Minimierung
+ Anpassungen und Neuimplementierungen betrafen vor allem die Minimierung
  der auszuführenden Instruktionen per Shader und da insbesondere die Textur-Oper
 ationen.
- Der Basisalgorithmus ist schon für die massive parallele Ausführung auf
- GPUs ausgelegt.
+ Der verwendete Basisalgorithmus ist jedoch schon für die massiv parallele
+ Ausführung auf GPUs ausgelegt.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1313,7 +1317,7 @@ Kollisionserkennung
 \begin_layout Standard
 Die sortierte zweidimensionale (RG)-Textur enthält die Nachbarbeziehung(en)
  zwischen den Partikeln.
- Rechts und links nah beieinander Liegende haben auch im dreidimensionalen
+ Rechts und links nah bei einander Liegende haben auch im dreidimensionalen
  Raum eine geringe Entfernung.
  Zur Laufzeit-Optimierung wird jedoch nur der nächste (Kollisions-) Partner
  pro Partikel gesucht.
@@ -1328,7 +1332,7 @@ Multiple Kollisionen bleiben so unentdeckt.
  direkten Einfluss auf die mögliche Anzahl von Partikeln in einer Zelle.
  Es sind unter Umständen mehr als von einem Shaderprogramm überprüft werden
  kann.
- Die eigentliche Sortierung erfolgt entsprechend dem Zellindex, sodass es
+ Die eigentliche Anordung erfolgt entsprechend dem Zellindex, sodass es
  passieren kann, dass die engsten Kollisionspartner in einer Reihe am weitesten
  auseinander liegen und somit auch nicht erkannt werden.
  Partikelkollisionen in adjazenten Zellen können aufgrund der Enumeration
@@ -1337,8 +1341,9 @@ Multiple Kollisionen bleiben so unentdeckt.
 \begin_inset Formula $dt$
 \end_inset
 
-, aufgrund dessen und abhängig von der Partikelgeschwindigkeit können Kollisione
-n, die zwischen aufeinander folgenden Bilder passieren, nicht detektiert
+.
+ Aufgrund dieser und abhängig von der Partikelgeschwindigkeit können Kollisionen
+, die zwischen aufeinander folgenden Bilder passieren, nicht detektiert
  werden.
 \end_layout
 
@@ -1559,9 +1564,9 @@ status open
 
 \end_inset
 
- Der Schritt von reinen CPU-Partikelsystemen hin zu GPU-Systemen bietet
- die neben den bekannten Möglichkeiten einer Physiksimulation auch die Interakti
-vität bei einer sehr großen Anzahl von Partikeln.
+ Der Schritt von reinen CPU-Partikelsystemen hin zu GPU-Systemen ermöglicht,
+ neben den bekannten Möglichkeiten einer Physiksimulation, die Interaktivität
+ bei einer sehr großen Anzahl von Partikeln.
  Das in 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -1569,31 +1574,31 @@ key "Kipfer:2004fk"
 
 \end_inset
 
- vorgestellte Partikelsystem nimmt sich vor die Performance existierender
+ vorgestellte Partikelsystem nimmt sich vor, die Performance existierender
  GPU-Systeme durch die intelligente Implementierung von Algorithmen zur
  Partikel-Erzeugung, Manipulation und Darstellung auf der GPU wesentlich
  zu steigern.
- Als Grafikschnittstelle wurde das plattformübergreifend OpenGL, jedoch
+ Als Grafikschnittstelle wurde das plattformübergreifende OpenGL, jedoch
  mit einer 
 \emph on
 ATI
 \emph default
- spezifischen Erweiterung zur Laufzeitoptimierung.
+ spezifischen Erweiterung zur Laufzeitoptimierung, verwendet.
  Laut den Autoren ist es das erste Partikelsystem, dass zur Vermeidung des
  CPU-GPU-Busses, zur Laufzeit komplett auf der GPU ausgeführt wird.
  Partikel-Partikel-Kollisionen werden erkannt, genauso wie solche mit Heightmaps.
  Eine für GPUs optimierte Sortierung wurde auch zur Sichtbarkeitssortierung
  implementiert, lässt sich darüber hinaus auch als generische Methode für
- nahezu allen Bereiche verwenden, in der Aufgaben es erfordern große Datenmengen
+ nahezu alle Bereiche verwenden, in der Aufgaben es erfordern große Datenmengen
  zu ordnen.
- Damit ist es möglich den aktuellen Trend nach Ausnutzung der massiven parallele
-n Rechenkraft aktueller Grafikkarten auszubauen.
- Weiterhin lassen sich auch andere Physikalische Modelle, je nach Anwendung,
+ Damit ist es möglich den aktuellen Trend zur Ausnutzung der massiven parallelen
+ Rechenkraft aktueller Grafikkarten auszubauen.
+ Weiterhin lassen sich auch andere physikalische Modelle, je nach Anwendung,
  in dieses Partikelsystem integrieren.
 \end_layout
 
 \begin_layout Standard
-Die presentierten Resultate im Artikel, also auch im Demovideo 
+Die präsentierten Resultate im Artikel, wie auch im Demovideo 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "TUM:2004fk"
@@ -1601,27 +1606,29 @@ key "TUM:2004fk"
 \end_inset
 
 , sind beeindruckend.
- Laut den presentierten Ergebnissen funktioniert die implementierte Variante
- bereits sehr gut.
- Man kann die Anzahl der dargestellten Partikel (und versucht die Randbedingunge
-n vergleichbar zu halten) mit dem in dieser Arbeit erwähnten Partikelsystem
+ Laut den Ergebnissen funktioniert die implementierte Variante bereits sehr
+ gut.
+ Man kann die Anzahl der dargestellten Partikel (unter dem Versuch die Randbedin
+gungen vergleichbar zu halten) mit dem in dieser Arbeit erwähnten Partikelsystem
  von NVIDIA, 
 \emph on
 particles
 \emph default
 , vergleichen.
- Es ermöglicht GPU-beschleunigte Berechnung und Darstellung von ca.
- 32 tausend Partikeln inklusive Partikel-Partikel- und Umgebungskollision.
+ Letzteres ermöglicht die GPU-beschleunigte Berechnung und Darstellung von
+ ca.
+ 32 tausend Partikeln inklusive Partikel-Partikel- und Umgebungs-Kollision.
  Dabei wird eine moderate Echtzeit von ca.
- 20 bis 24 Bilder pro Sekunder auf dem Laptop des Autors erreicht.
- Die Ergebnisse des Artikels zeigen eine ähnlich Framerate (31) bei vergleichbar
-en Bedingungen aber mit ca.
+ 20 bis 24 Bilder pro Sekunde auf dem Laptop des Autors erreicht.
+ Die Ergebnisse des Artikels zeigen eine ähnlich Bildrate (31) bei vergleichbare
+n Bedingungen aber mit ca.
  262 tausend (
 \begin_inset Formula $512^{2}$
 \end_inset
 
 ) Partikeln.
- Bei 1 Million Partikel (
+ Bei 1 Mio.
+ Partikeln (
 \begin_inset Formula $1024^{2}$
 \end_inset
 
@@ -1632,37 +1639,37 @@ g sogar 42 Bilder pro Sekunde.
 \begin_layout Standard
 Partikelsysteme sind heute bereits weit verbreitet und erfreuen sich großer
  Anwendung in Computerspielen, Animationen und Simulationen.
- Die Grundlagen dazu sind erkannt und publiziert 
+ Die Grundlagen dazu sind erkannt und publiziert (beispielsweise 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RuneParticleSys,Kipfer:2004fk"
 
 \end_inset
 
-.
+).
  Das verwendete Physikmodell kann aber noch Gegenstand aktueller Forschung
- sein und kann in dem vorgestelltem Partikelsystem implementiert, getestet
+ sein und in das vorgestellte Partikelsystem implementiert, damit getestet
  und angewandt werden.
 \end_layout
 
 \begin_layout Standard
-Der Artikel diskutiert objektiv aktuelle Methoden der Sortierung und Partikelsys
-teme für GPUs.
- Die verwendeten Grafikschnittstellen von OpenGL werden nur im Ansatz erwähnt.
- Des Weiteren wird auf die Grundlagen von Partikelsystemen nicht detailiert
+Der Artikel diskutiert objektiv aktuelle Methoden für Sortierung und Partikelsys
+teme im Allgemeinen, hinsichtlich GPU-Beschleunigung.
+ Die verwendete Grafikschnittstelle von OpenGL wird nur im Ansatz erwähnt.
+ Des Weiteren wird auf die Grundlagen von Partikelsystemen nicht detailliert
  eingegangen.
  Dagegen ausführlich werden die Algorithmen zur Sortierung und Kollisionserkennu
 ng und ihre Nachteile dargelegt und diverse Anwendungen am Ende angedeutet.
 \end_layout
 
 \begin_layout Standard
-In zukünftigen Arbeiten kann man momentanen Nachteile des vorgestellten
+In zukünftigen Arbeiten kann man die momentanen Nachteile des vorgestellten
  Systems beseitigen.
- Die nicht entdeckten Kollisionen sollten weiter minimiert werden und auch
- Algorithmen implementiert werden, die Mehrfachkollisionen erkennen.
- Auch die proprietären Erweiterungen von einem Grafikkartenhersteller sollten
- einem geräteunabhängiger Implementierung weichen um potentielle Hardwareunterst
-ützung zu erweitern.
+ Die nicht entdeckten Kollisionen sollten weiter minimiert und Algorithmen
+ implementiert werden, die Mehrfachkollisionen erkennen.
+ Auch die proprietären Erweiterungen eines Grafikkartenherstellers sollten
+ einer geräteunabhängigen Implementierung weichen um die potentielle Hardwareunt
+erstützung zu erweitern.
  Die Implementierung anderer Physikmodelle kann neue interessante Anwendungen
  ermöglichen.
 \end_layout
@@ -1673,7 +1680,7 @@ Partikelsysteme sind ein Paradebeispiel um komplexe Effekte mittels prozeduraler
  darzustellen.
  Der Artikel geht nur auf die notwendigen Details des vorgestellten Partikelsyst
 ems ein, aber auf diese richtig.
- Das Thema ist interessant und optisch ansprechend und bietet potential
+ Das Thema ist interessant und optisch ansprechend und bietet Potential
  für zukünftige Arbeiten.
 \end_layout
 
