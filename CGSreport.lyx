@@ -110,7 +110,7 @@ Universität Hamburg
 \end_layout
 
 \begin_layout Abstract
-Dieser Bericht gibt eine Einführung in GPU-basierte Partikelsysteme.
+Dieser Bericht gibt eine Einführung in das Thema GPU-basierte Partikelsysteme.
  Es wird schrittweise versucht von allgemeinen Partikelsystemgrundlagen
  und Beispielen die Entwicklung hin zu einem komplett auf der GPU ausgeführten
  System nachzuvollziehen.
@@ -142,11 +142,11 @@ Partikelsystem
 \begin_layout Standard
 Partikelsysteme stellen Funktionen zur Verfügung, die eine große Anzahl
  von Objekten animieren können.
- Damit können zum Beispiel im Bereich der Computergrafik physikalische Vorgänge
- (wie Rauch) dargestellt werden.
+ Damit ist es möglich, zum Beispiel im Bereich der Computergrafik, physikalische
+ Vorgänge (wie Rauch) darzustellen.
  Dies wäre mit konventionellen Methoden sehr komplex.
- Mit einem Partikelsystem lässt sich der Gesamtprozess aber aufgrund relativ
- einfacher Bewegungsmodelle von einzelnen Objekten, eben den Partikeln,
+ Mit einem Partikelsystem lässt sich der Gesamtprozess aber aufgrund eines
+ relativ einfachen Bewegungsmodells von einzelnen Objekten, eben den Partikeln,
  modellieren.
  
 \begin_inset Note Note
@@ -165,7 +165,7 @@ reference "Fig:PartSmoke"
 
 \end_inset
 
- zeigt ein Rauchdarstellung, die auf dem Bewegungsmodell einzelner Partikel
+ zeigt eine Rauchdarstellung, die auf dem Bewegungsmodell einzelner Partikel
  beruht.
  
 \begin_inset Float figure
@@ -189,7 +189,7 @@ status collapsed
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Rauchpartikel [Wikipedia]
+Rauch dargestellt mit Partikeln [Wikipedia]
 \end_layout
 
 \end_inset
@@ -214,8 +214,8 @@ Details
 \end_layout
 
 \begin_layout Standard
-Das Bewegungsmodell von Partikeln ergibt ein Modell für das gesamte zusammengese
-tzte Objekt.
+Das Bewegungsmodell von einzelnen Partikeln ergibt ein Modell für das gesamte
+ zusammengesetzte Objekt.
  Darauf basierend eignet sich ein solches System für so genannte volumetrische
  Effekte.
  Gerade Feuer, Explosionen, Rauch und Flüssigkeiten werden in Animationen
@@ -235,7 +235,7 @@ Für anspruchsvollere Dynamik-Simulationen können an ein Partikelsystem noch
 
 \begin_layout Standard
 Ein Beispiel eines einfachen aber optisch sehr überzeugenden Partikelsystems
- ist ein in POV-Ray implementiertes von 
+ ist ein in POV-Ray Implementiertes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RuneParticleSys"
@@ -433,16 +433,16 @@ Lebensphase
 
  eines Partikels beginnt mit seiner Platzierung am Emitter.
  Dabei ist eine zunächst konstante Anfangsgeschwindigkeit festgelegt.
- Dieser wirkt in der Regel eine (konstante) Dämpfung entgegen um die Partikelbew
-egung über die Zeit zu verringern.
+ Dieser wirkt in der Regel eine Dämpfung entgegen um die Partikelbewegung
+ über die Zeit zu verringern.
  Eine Lebensdauer legt das Zeitfenster fest, in der sich ein Partikel in
  der Animation befindet.
  Sie wird meist in 
 \emph on
-Clockzyklen
+Clockcycles
 \emph default
  angegeben.
- Um die Animation in gewissen Grenzen zu skalieren ist darüber hinaus eine
+ Um die Animation in gewissen Grenzen zu skalieren, ist darüber hinaus eine
  maximale Anzahl von Partikeln festgelegt.
  
 \begin_inset Note Note
@@ -522,7 +522,8 @@ Diese zwei Gleichungen verwenden die aktuelle Geschwindigkeit
 \begin_inset Formula $F$
 \end_inset
 
- ist eine externe Kraft (hier Gravitation) und 
+ ist eine externe Kraft (z.B.
+ Gravitation) und 
 \begin_inset Formula $m$
 \end_inset
 
@@ -614,8 +615,8 @@ keit an.
  Doch um volumetrische Effekte einigermaßen sinnvoll einzusetzten bedarf
  es in der Regel einer sehr großen Anzahl von Partikeln von einigen 1000
  bis dem Tausendfachen, je nach Anwendung.
- Solche Massen an Berechnungen könne von der CPU nicht mehr schnell genug
- berechnet werden (und nebenbei müssen noch andere Funktionen berechnet
+ Solche Massen an Berechnungen können von der CPU nicht mehr schnell genug
+ berechnet werden (und nebenbei müssen noch andere Funktionen bearbeitet
  werden).
 \end_layout
 
@@ -879,14 +880,14 @@ Die Kombination aus dem verwendeten Bewegungsmodell und der riesigen Anzahl
  an darstellbaren Partikeln eignet sich sehr gut für Strömungssimulationen,
  wie in Abbildungen 
 \begin_inset CommandInset ref
-LatexCommand vpageref
+LatexCommand ref
 reference "Fig:AnwStroem1"
 
 \end_inset
 
  und 
 \begin_inset CommandInset ref
-LatexCommand vpageref
+LatexCommand vref
 reference "Fig:AnwStroem2"
 
 \end_inset
@@ -1177,7 +1178,7 @@ g der Partikel in der Rendering-Phase.
 \begin_inset Formula $(1)$
 \end_inset
 
-, zum Anderen muss für eine (halb-) transparente Darstellung von Partikeln
+, zum Anderen muss, für eine (halb-) transparente Darstellung von Partikeln,
  die Entfernung dieser zum Betrachter berücksichtigt werden 
 \begin_inset Formula $(2)$
 \end_inset
@@ -1231,7 +1232,7 @@ Partikel werden nun in einer zweidimensionalen (RG)-Textur mit ihrem Index
  und Schlüssel gespeichert.
  Die Textur wird reihenweise sortiert und gibt die neue Ordnung für die
  erwähnten Partikel-Positions- und Geschwindigkeits-Texturen vor, die entspreche
-nd neu geordnet werden.
+nd neu arrangiert werden.
  Abbildung 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1365,7 +1366,7 @@ reference "Fig:2StepSort"
 \end_inset
 
  ).
- Obwohl insgesamt so in einigen Fällen keine Kollision erkannt wird ist
+ Obwohl insgesamt so in einigen Fällen keine Kollision erkannt wird, ist
  dies je nach Anwendung akzeptabel, da bei > 100.000 Partikel einige einfach
  nicht auffallen (Abbildung 
 \begin_inset CommandInset ref
@@ -1586,7 +1587,8 @@ ATI
  spezifischen Erweiterung zur Laufzeitoptimierung, verwendet.
  Laut den Autoren ist es das erste Partikelsystem, dass zur Vermeidung des
  CPU-GPU-Busses, zur Laufzeit komplett auf der GPU ausgeführt wird.
- Partikel-Partikel-Kollisionen werden erkannt, genauso wie solche mit Heightmaps.
+ Partikel-Partikel-Kollisionen werden erkannt, genauso wie solche mit der
+ Oberfläche von Heightmaps.
  Eine für GPUs optimierte Sortierung wurde auch zur Sichtbarkeitssortierung
  implementiert, lässt sich darüber hinaus auch als generische Methode für
  nahezu alle Bereiche verwenden, in der Aufgaben es erfordern große Datenmengen
@@ -1608,9 +1610,9 @@ key "TUM:2004fk"
 , sind beeindruckend.
  Laut den Ergebnissen funktioniert die implementierte Variante bereits sehr
  gut.
- Man kann die Anzahl der dargestellten Partikel (unter dem Versuch die Randbedin
-gungen vergleichbar zu halten) mit dem in dieser Arbeit erwähnten Partikelsystem
- von NVIDIA, 
+ Man kann die Anzahl der dargestellten Partikel (unter dem Versuch, die
+ Randbedingungen vergleichbar zu halten) mit dem in dieser Arbeit erwähnten
+ Partikelsystem von NVIDIA, 
 \emph on
 particles
 \emph default
@@ -1668,8 +1670,8 @@ In zukünftigen Arbeiten kann man die momentanen Nachteile des vorgestellten
  Die nicht entdeckten Kollisionen sollten weiter minimiert und Algorithmen
  implementiert werden, die Mehrfachkollisionen erkennen.
  Auch die proprietären Erweiterungen eines Grafikkartenherstellers sollten
- einer geräteunabhängigen Implementierung weichen um die potentielle Hardwareunt
-erstützung zu erweitern.
+ einer geräteunabhängigen Implementierung weichen, um die potentielle Hardwareun
+terstützung zu erweitern.
  Die Implementierung anderer Physikmodelle kann neue interessante Anwendungen
  ermöglichen.
 \end_layout
