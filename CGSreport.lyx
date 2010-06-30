@@ -491,7 +491,7 @@ reference "eq:PartPos"
 
 \begin_layout Standard
 \begin_inset Formula \begin{align}
-v(r,t+dt) & =v(r,t)+v_{ext}(r,t)+\frac{F}{m}+dt\label{eq:PartVel}\\
+v(r,t+dt) & =v(r,t)+v_{ext}(r,t)+\frac{F}{m}dt\label{eq:PartVel}\\
 r(t+dt) & =r(t)+\frac{1}{2}\Bigl(v(r,t)+v(r,t+dt)\Bigr)dt\label{eq:PartPos}\end{align}
 
 \end_inset
